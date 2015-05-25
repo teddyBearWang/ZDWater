@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F3E19B01B12EF6F008A9638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E19AF1B12EF6F008A9638 /* Main.storyboard */; };
+		9F3E19B41B12EF9B008A9638 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19B31B12EF9B008A9638 /* ContactViewController.m */; };
+		9F3E19B71B12EFA2008A9638 /* GateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19B61B12EFA2008A9638 /* GateTableViewController.m */; };
+		9F3E19BA1B12EFB9008A9638 /* NotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19B91B12EFB9008A9638 /* NotificationTableViewController.m */; };
+		9F3E19BD1B12EFCE008A9638 /* RainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19BC1B12EFCE008A9638 /* RainTableViewController.m */; };
+		9F3E19C01B12EFD6008A9638 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19BF1B12EFD6008A9638 /* SettingViewController.m */; };
+		9F3E19C91B12EFE6008A9638 /* WaterLevelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19C21B12EFE6008A9638 /* WaterLevelTableViewController.m */; };
+		9F3E19CA1B12EFE6008A9638 /* WaterQualityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19C41B12EFE6008A9638 /* WaterQualityTableViewController.m */; };
+		9F3E19CB1B12EFE6008A9638 /* WaterYieldTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19C61B12EFE6008A9638 /* WaterYieldTableViewController.m */; };
+		9F3E19CC1B12EFE6008A9638 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19C81B12EFE6008A9638 /* WeatherViewController.m */; };
+		9F3E19CF1B12F000008A9638 /* WaterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19CE1B12F000008A9638 /* WaterCell.m */; };
+		9F3E19D21B12F709008A9638 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19D11B12F709008A9638 /* MenuViewController.m */; };
+		9F3E19D51B12FC58008A9638 /* RainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E19D41B12FC58008A9638 /* RainHeaderView.xib */; };
+		9F3E19D71B12FE77008A9638 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E19D61B12FE77008A9638 /* CustomHeaderView.xib */; };
+		9F3E19DA1B12FF76008A9638 /* CustomHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19D91B12FF76008A9638 /* CustomHeaderView.m */; };
+		9F3E19E01B131046008A9638 /* WaterQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19DF1B131046008A9638 /* WaterQuality.m */; };
+		9F3E19E41B1311A1008A9638 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3E19E31B1311A1008A9638 /* CFNetwork.framework */; };
+		9F3E19E61B1311AA008A9638 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3E19E51B1311AA008A9638 /* SystemConfiguration.framework */; };
+		9F3E19E81B1311B1008A9638 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3E19E71B1311B1008A9638 /* MobileCoreServices.framework */; };
+		9F3E19EA1B1311BC008A9638 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3E19E91B1311BC008A9638 /* CoreGraphics.framework */; };
+		9F3E19EC1B1311CD008A9638 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3E19EB1B1311CD008A9638 /* libz.1.1.3.dylib */; };
+		9F3E1A051B13172D008A9638 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19F11B13172D008A9638 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A061B13172D008A9638 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19F41B13172D008A9638 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A071B13172D008A9638 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19F61B13172D008A9638 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A081B13172D008A9638 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19F81B13172D008A9638 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A091B13172D008A9638 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19FA1B13172D008A9638 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A0A1B13172D008A9638 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E19FC1B13172D008A9638 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A0B1B13172D008A9638 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E1A001B13172D008A9638 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A0C1B13172D008A9638 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E1A021B13172D008A9638 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A131B1317C8008A9638 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E1A121B1317C8008A9638 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F3E1A151B132FD5008A9638 /* WaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E1A141B132FD5008A9638 /* WaterCell.xib */; };
+		9F4A81B51B09B9D800A693A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81B41B09B9D800A693A7 /* main.m */; };
+		9F4A81B81B09B9D800A693A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81B71B09B9D800A693A7 /* AppDelegate.m */; };
+		9F4A81C01B09B9D800A693A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4A81BF1B09B9D800A693A7 /* Images.xcassets */; };
+		9F4A81CF1B09B9D800A693A7 /* ZDWaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81CE1B09B9D800A693A7 /* ZDWaterTests.m */; };
+		9F4A81DB1B09BA3400A693A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81DA1B09BA3400A693A7 /* RootViewController.m */; };
+		9F4A81DE1B09BA6400A693A7 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81DD1B09BA6400A693A7 /* RootNavigationController.m */; };
+		9F4A81E61B09BCCD00A693A7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4A81E51B09BCCD00A693A7 /* Login.storyboard */; };
+		9F4A81E91B09BD2900A693A7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81E81B09BD2900A693A7 /* LoginViewController.m */; };
+		9F4A81EC1B09C22F00A693A7 /* UIView+RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81EB1B09C22F00A693A7 /* UIView+RootView.m */; };
+		9F4A81F51B09D6E400A693A7 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81F41B09D6E400A693A7 /* NotificationCell.m */; };
+		9F4A81F81B09DC9800A693A7 /* RainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81F71B09DC9800A693A7 /* RainCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F4A81C91B09B9D800A693A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F4A81A71B09B9D800A693A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F4A81AE1B09B9D800A693A7;
+			remoteInfo = ZDWater;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F3E19AF1B12EF6F008A9638 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9F3E19B21B12EF9B008A9638 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		9F3E19B31B12EF9B008A9638 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		9F3E19B51B12EFA2008A9638 /* GateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateTableViewController.h; sourceTree = "<group>"; };
+		9F3E19B61B12EFA2008A9638 /* GateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateTableViewController.m; sourceTree = "<group>"; };
+		9F3E19B81B12EFB9008A9638 /* NotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewController.h; sourceTree = "<group>"; };
+		9F3E19B91B12EFB9008A9638 /* NotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewController.m; sourceTree = "<group>"; };
+		9F3E19BB1B12EFCE008A9638 /* RainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainTableViewController.h; sourceTree = "<group>"; };
+		9F3E19BC1B12EFCE008A9638 /* RainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainTableViewController.m; sourceTree = "<group>"; };
+		9F3E19BE1B12EFD6008A9638 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		9F3E19BF1B12EFD6008A9638 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		9F3E19C11B12EFE6008A9638 /* WaterLevelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterLevelTableViewController.h; sourceTree = "<group>"; };
+		9F3E19C21B12EFE6008A9638 /* WaterLevelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterLevelTableViewController.m; sourceTree = "<group>"; };
+		9F3E19C31B12EFE6008A9638 /* WaterQualityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterQualityTableViewController.h; sourceTree = "<group>"; };
+		9F3E19C41B12EFE6008A9638 /* WaterQualityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterQualityTableViewController.m; sourceTree = "<group>"; };
+		9F3E19C51B12EFE6008A9638 /* WaterYieldTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterYieldTableViewController.h; sourceTree = "<group>"; };
+		9F3E19C61B12EFE6008A9638 /* WaterYieldTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterYieldTableViewController.m; sourceTree = "<group>"; };
+		9F3E19C71B12EFE6008A9638 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		9F3E19C81B12EFE6008A9638 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		9F3E19CD1B12F000008A9638 /* WaterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCell.h; sourceTree = "<group>"; };
+		9F3E19CE1B12F000008A9638 /* WaterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterCell.m; sourceTree = "<group>"; };
+		9F3E19D01B12F709008A9638 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		9F3E19D11B12F709008A9638 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		9F3E19D41B12FC58008A9638 /* RainHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RainHeaderView.xib; sourceTree = "<group>"; };
+		9F3E19D61B12FE77008A9638 /* CustomHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		9F3E19D81B12FF76008A9638 /* CustomHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeaderView.h; sourceTree = "<group>"; };
+		9F3E19D91B12FF76008A9638 /* CustomHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeaderView.m; sourceTree = "<group>"; };
+		9F3E19DB1B130254008A9638 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9F3E19DE1B131046008A9638 /* WaterQuality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterQuality.h; sourceTree = "<group>"; };
+		9F3E19DF1B131046008A9638 /* WaterQuality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterQuality.m; sourceTree = "<group>"; };
+		9F3E19E31B1311A1008A9638 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9F3E19E51B1311AA008A9638 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9F3E19E71B1311B1008A9638 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9F3E19E91B1311BC008A9638 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9F3E19EB1B1311CD008A9638 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		9F3E19F01B13172D008A9638 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		9F3E19F11B13172D008A9638 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		9F3E19F21B13172D008A9638 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		9F3E19F31B13172D008A9638 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		9F3E19F41B13172D008A9638 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		9F3E19F51B13172D008A9638 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		9F3E19F61B13172D008A9638 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		9F3E19F71B13172D008A9638 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		9F3E19F81B13172D008A9638 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		9F3E19F91B13172D008A9638 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		9F3E19FA1B13172D008A9638 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		9F3E19FB1B13172D008A9638 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		9F3E19FC1B13172D008A9638 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		9F3E19FD1B13172D008A9638 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		9F3E19FE1B13172D008A9638 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		9F3E19FF1B13172D008A9638 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		9F3E1A001B13172D008A9638 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		9F3E1A011B13172D008A9638 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		9F3E1A021B13172D008A9638 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		9F3E1A031B13172D008A9638 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		9F3E1A111B1317C8008A9638 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9F3E1A121B1317C8008A9638 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9F3E1A141B132FD5008A9638 /* WaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCell.xib; sourceTree = "<group>"; };
+		9F4A81AF1B09B9D800A693A7 /* ZDWater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDWater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4A81B31B09B9D800A693A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F4A81B41B09B9D800A693A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F4A81B61B09B9D800A693A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F4A81B71B09B9D800A693A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F4A81BF1B09B9D800A693A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9F4A81C81B09B9D800A693A7 /* ZDWaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDWaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4A81CD1B09B9D800A693A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F4A81CE1B09B9D800A693A7 /* ZDWaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDWaterTests.m; sourceTree = "<group>"; };
+		9F4A81D91B09BA3400A693A7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		9F4A81DA1B09BA3400A693A7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		9F4A81DC1B09BA6400A693A7 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		9F4A81DD1B09BA6400A693A7 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		9F4A81E51B09BCCD00A693A7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9F4A81E71B09BD2900A693A7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9F4A81E81B09BD2900A693A7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9F4A81EA1B09C22F00A693A7 /* UIView+RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RootView.h"; sourceTree = "<group>"; };
+		9F4A81EB1B09C22F00A693A7 /* UIView+RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RootView.m"; sourceTree = "<group>"; };
+		9F4A81F31B09D6E400A693A7 /* NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
+		9F4A81F41B09D6E400A693A7 /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
+		9F4A81F61B09DC9800A693A7 /* RainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainCell.h; sourceTree = "<group>"; };
+		9F4A81F71B09DC9800A693A7 /* RainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F4A81AC1B09B9D800A693A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3E19EC1B1311CD008A9638 /* libz.1.1.3.dylib in Frameworks */,
+				9F3E19EA1B1311BC008A9638 /* CoreGraphics.framework in Frameworks */,
+				9F3E19E81B1311B1008A9638 /* MobileCoreServices.framework in Frameworks */,
+				9F3E19E61B1311AA008A9638 /* SystemConfiguration.framework in Frameworks */,
+				9F3E19E41B1311A1008A9638 /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F4A81C51B09B9D800A693A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F3E19B11B12EF8F008A9638 /* items */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E19B81B12EFB9008A9638 /* NotificationTableViewController.h */,
+				9F3E19B91B12EFB9008A9638 /* NotificationTableViewController.m */,
+				9F3E19B21B12EF9B008A9638 /* ContactViewController.h */,
+				9F3E19B31B12EF9B008A9638 /* ContactViewController.m */,
+				9F3E19B51B12EFA2008A9638 /* GateTableViewController.h */,
+				9F3E19B61B12EFA2008A9638 /* GateTableViewController.m */,
+				9F3E19BB1B12EFCE008A9638 /* RainTableViewController.h */,
+				9F3E19BC1B12EFCE008A9638 /* RainTableViewController.m */,
+				9F3E19BE1B12EFD6008A9638 /* SettingViewController.h */,
+				9F3E19BF1B12EFD6008A9638 /* SettingViewController.m */,
+				9F3E19C11B12EFE6008A9638 /* WaterLevelTableViewController.h */,
+				9F3E19C21B12EFE6008A9638 /* WaterLevelTableViewController.m */,
+				9F3E19C31B12EFE6008A9638 /* WaterQualityTableViewController.h */,
+				9F3E19C41B12EFE6008A9638 /* WaterQualityTableViewController.m */,
+				9F3E19C51B12EFE6008A9638 /* WaterYieldTableViewController.h */,
+				9F3E19C61B12EFE6008A9638 /* WaterYieldTableViewController.m */,
+				9F3E19C71B12EFE6008A9638 /* WeatherViewController.h */,
+				9F3E19C81B12EFE6008A9638 /* WeatherViewController.m */,
+			);
+			name = items;
+			sourceTree = "<group>";
+		};
+		9F3E19D31B12FC36008A9638 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E19D41B12FC58008A9638 /* RainHeaderView.xib */,
+				9F3E19D61B12FE77008A9638 /* CustomHeaderView.xib */,
+				9F3E1A141B132FD5008A9638 /* WaterCell.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		9F3E19DD1B131011008A9638 /* Object  */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E19DE1B131046008A9638 /* WaterQuality.h */,
+				9F3E19DF1B131046008A9638 /* WaterQuality.m */,
+			);
+			name = "Object ";
+			sourceTree = "<group>";
+		};
+		9F3E19EF1B13171A008A9638 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E19F01B13172D008A9638 /* ASIAuthenticationDialog.h */,
+				9F3E19F11B13172D008A9638 /* ASIAuthenticationDialog.m */,
+				9F3E19F21B13172D008A9638 /* ASICacheDelegate.h */,
+				9F3E19F31B13172D008A9638 /* ASIDataCompressor.h */,
+				9F3E19F41B13172D008A9638 /* ASIDataCompressor.m */,
+				9F3E19F51B13172D008A9638 /* ASIDataDecompressor.h */,
+				9F3E19F61B13172D008A9638 /* ASIDataDecompressor.m */,
+				9F3E19F71B13172D008A9638 /* ASIDownloadCache.h */,
+				9F3E19F81B13172D008A9638 /* ASIDownloadCache.m */,
+				9F3E19F91B13172D008A9638 /* ASIFormDataRequest.h */,
+				9F3E19FA1B13172D008A9638 /* ASIFormDataRequest.m */,
+				9F3E19FB1B13172D008A9638 /* ASIHTTPRequest.h */,
+				9F3E19FC1B13172D008A9638 /* ASIHTTPRequest.m */,
+				9F3E19FD1B13172D008A9638 /* ASIHTTPRequestConfig.h */,
+				9F3E19FE1B13172D008A9638 /* ASIHTTPRequestDelegate.h */,
+				9F3E19FF1B13172D008A9638 /* ASIInputStream.h */,
+				9F3E1A001B13172D008A9638 /* ASIInputStream.m */,
+				9F3E1A011B13172D008A9638 /* ASINetworkQueue.h */,
+				9F3E1A021B13172D008A9638 /* ASINetworkQueue.m */,
+				9F3E1A031B13172D008A9638 /* ASIProgressDelegate.h */,
+				9F3E1A111B1317C8008A9638 /* Reachability.h */,
+				9F3E1A121B1317C8008A9638 /* Reachability.m */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		9F4A81A61B09B9D800A693A7 = {
+			isa = PBXGroup;
+			children = (
+				9F3E19EB1B1311CD008A9638 /* libz.1.1.3.dylib */,
+				9F3E19E91B1311BC008A9638 /* CoreGraphics.framework */,
+				9F3E19E71B1311B1008A9638 /* MobileCoreServices.framework */,
+				9F3E19E51B1311AA008A9638 /* SystemConfiguration.framework */,
+				9F3E19E31B1311A1008A9638 /* CFNetwork.framework */,
+				9F4A81B11B09B9D800A693A7 /* ZDWater */,
+				9F4A81CB1B09B9D800A693A7 /* ZDWaterTests */,
+				9F4A81B01B09B9D800A693A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F4A81B01B09B9D800A693A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A81AF1B09B9D800A693A7 /* ZDWater.app */,
+				9F4A81C81B09B9D800A693A7 /* ZDWaterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F4A81B11B09B9D800A693A7 /* ZDWater */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E19DD1B131011008A9638 /* Object  */,
+				9F4A81F21B09D6BF00A693A7 /* CustomCell */,
+				9F4A81D81B09BA1700A693A7 /* Root */,
+				9F4A81B61B09B9D800A693A7 /* AppDelegate.h */,
+				9F4A81B71B09B9D800A693A7 /* AppDelegate.m */,
+				9F4A81E51B09BCCD00A693A7 /* Login.storyboard */,
+				9F3E19AF1B12EF6F008A9638 /* Main.storyboard */,
+				9F4A81E71B09BD2900A693A7 /* LoginViewController.h */,
+				9F4A81E81B09BD2900A693A7 /* LoginViewController.m */,
+				9F3E19D01B12F709008A9638 /* MenuViewController.h */,
+				9F3E19D11B12F709008A9638 /* MenuViewController.m */,
+				9F3E19D31B12FC36008A9638 /* xib */,
+				9F3E19B11B12EF8F008A9638 /* items */,
+				9F4A81BF1B09B9D800A693A7 /* Images.xcassets */,
+				9F3E19EF1B13171A008A9638 /* ASIHTTPRequest */,
+				9F4A81B21B09B9D800A693A7 /* Supporting Files */,
+			);
+			path = ZDWater;
+			sourceTree = "<group>";
+		};
+		9F4A81B21B09B9D800A693A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A81B31B09B9D800A693A7 /* Info.plist */,
+				9F4A81B41B09B9D800A693A7 /* main.m */,
+				9F3E19DB1B130254008A9638 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F4A81CB1B09B9D800A693A7 /* ZDWaterTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A81CE1B09B9D800A693A7 /* ZDWaterTests.m */,
+				9F4A81CC1B09B9D800A693A7 /* Supporting Files */,
+			);
+			path = ZDWaterTests;
+			sourceTree = "<group>";
+		};
+		9F4A81CC1B09B9D800A693A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A81CD1B09B9D800A693A7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F4A81D81B09BA1700A693A7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A81EA1B09C22F00A693A7 /* UIView+RootView.h */,
+				9F4A81EB1B09C22F00A693A7 /* UIView+RootView.m */,
+				9F4A81D91B09BA3400A693A7 /* RootViewController.h */,
+				9F4A81DA1B09BA3400A693A7 /* RootViewController.m */,
+				9F4A81DC1B09BA6400A693A7 /* RootNavigationController.h */,
+				9F4A81DD1B09BA6400A693A7 /* RootNavigationController.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		9F4A81F21B09D6BF00A693A7 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F4A81F31B09D6E400A693A7 /* NotificationCell.h */,
+				9F4A81F41B09D6E400A693A7 /* NotificationCell.m */,
+				9F4A81F61B09DC9800A693A7 /* RainCell.h */,
+				9F4A81F71B09DC9800A693A7 /* RainCell.m */,
+				9F3E19CD1B12F000008A9638 /* WaterCell.h */,
+				9F3E19CE1B12F000008A9638 /* WaterCell.m */,
+				9F3E19D81B12FF76008A9638 /* CustomHeaderView.h */,
+				9F3E19D91B12FF76008A9638 /* CustomHeaderView.m */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F4A81AE1B09B9D800A693A7 /* ZDWater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F4A81D21B09B9D800A693A7 /* Build configuration list for PBXNativeTarget "ZDWater" */;
+			buildPhases = (
+				9F4A81AB1B09B9D800A693A7 /* Sources */,
+				9F4A81AC1B09B9D800A693A7 /* Frameworks */,
+				9F4A81AD1B09B9D800A693A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZDWater;
+			productName = ZDWater;
+			productReference = 9F4A81AF1B09B9D800A693A7 /* ZDWater.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F4A81C71B09B9D800A693A7 /* ZDWaterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F4A81D51B09B9D800A693A7 /* Build configuration list for PBXNativeTarget "ZDWaterTests" */;
+			buildPhases = (
+				9F4A81C41B09B9D800A693A7 /* Sources */,
+				9F4A81C51B09B9D800A693A7 /* Frameworks */,
+				9F4A81C61B09B9D800A693A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F4A81CA1B09B9D800A693A7 /* PBXTargetDependency */,
+			);
+			name = ZDWaterTests;
+			productName = ZDWaterTests;
+			productReference = 9F4A81C81B09B9D800A693A7 /* ZDWaterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F4A81A71B09B9D800A693A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = teddy;
+				TargetAttributes = {
+					9F4A81AE1B09B9D800A693A7 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = LNMMM7J8HZ;
+					};
+					9F4A81C71B09B9D800A693A7 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 9F4A81AE1B09B9D800A693A7;
+					};
+				};
+			};
+			buildConfigurationList = 9F4A81AA1B09B9D800A693A7 /* Build configuration list for PBXProject "ZDWater" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F4A81A61B09B9D800A693A7;
+			productRefGroup = 9F4A81B01B09B9D800A693A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F4A81AE1B09B9D800A693A7 /* ZDWater */,
+				9F4A81C71B09B9D800A693A7 /* ZDWaterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F4A81AD1B09B9D800A693A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3E19D71B12FE77008A9638 /* CustomHeaderView.xib in Resources */,
+				9F3E19B01B12EF6F008A9638 /* Main.storyboard in Resources */,
+				9F3E19D51B12FC58008A9638 /* RainHeaderView.xib in Resources */,
+				9F3E1A151B132FD5008A9638 /* WaterCell.xib in Resources */,
+				9F4A81E61B09BCCD00A693A7 /* Login.storyboard in Resources */,
+				9F4A81C01B09B9D800A693A7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F4A81C61B09B9D800A693A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F4A81AB1B09B9D800A693A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3E19B71B12EFA2008A9638 /* GateTableViewController.m in Sources */,
+				9F4A81B81B09B9D800A693A7 /* AppDelegate.m in Sources */,
+				9F3E1A0A1B13172D008A9638 /* ASIHTTPRequest.m in Sources */,
+				9F4A81EC1B09C22F00A693A7 /* UIView+RootView.m in Sources */,
+				9F3E1A131B1317C8008A9638 /* Reachability.m in Sources */,
+				9F4A81DB1B09BA3400A693A7 /* RootViewController.m in Sources */,
+				9F3E19D21B12F709008A9638 /* MenuViewController.m in Sources */,
+				9F3E1A071B13172D008A9638 /* ASIDataDecompressor.m in Sources */,
+				9F4A81DE1B09BA6400A693A7 /* RootNavigationController.m in Sources */,
+				9F4A81F51B09D6E400A693A7 /* NotificationCell.m in Sources */,
+				9F3E19BA1B12EFB9008A9638 /* NotificationTableViewController.m in Sources */,
+				9F3E19DA1B12FF76008A9638 /* CustomHeaderView.m in Sources */,
+				9F4A81F81B09DC9800A693A7 /* RainCell.m in Sources */,
+				9F3E1A0C1B13172D008A9638 /* ASINetworkQueue.m in Sources */,
+				9F3E19CB1B12EFE6008A9638 /* WaterYieldTableViewController.m in Sources */,
+				9F3E1A081B13172D008A9638 /* ASIDownloadCache.m in Sources */,
+				9F3E19CA1B12EFE6008A9638 /* WaterQualityTableViewController.m in Sources */,
+				9F3E19CC1B12EFE6008A9638 /* WeatherViewController.m in Sources */,
+				9F3E1A091B13172D008A9638 /* ASIFormDataRequest.m in Sources */,
+				9F4A81B51B09B9D800A693A7 /* main.m in Sources */,
+				9F3E19BD1B12EFCE008A9638 /* RainTableViewController.m in Sources */,
+				9F3E19C91B12EFE6008A9638 /* WaterLevelTableViewController.m in Sources */,
+				9F3E1A0B1B13172D008A9638 /* ASIInputStream.m in Sources */,
+				9F3E19E01B131046008A9638 /* WaterQuality.m in Sources */,
+				9F3E1A061B13172D008A9638 /* ASIDataCompressor.m in Sources */,
+				9F3E19B41B12EF9B008A9638 /* ContactViewController.m in Sources */,
+				9F4A81E91B09BD2900A693A7 /* LoginViewController.m in Sources */,
+				9F3E19CF1B12F000008A9638 /* WaterCell.m in Sources */,
+				9F3E19C01B12EFD6008A9638 /* SettingViewController.m in Sources */,
+				9F3E1A051B13172D008A9638 /* ASIAuthenticationDialog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F4A81C41B09B9D800A693A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F4A81CF1B09B9D800A693A7 /* ZDWaterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F4A81CA1B09B9D800A693A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F4A81AE1B09B9D800A693A7 /* ZDWater */;
+			targetProxy = 9F4A81C91B09B9D800A693A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9F4A81D01B09B9D800A693A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F4A81D11B09B9D800A693A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F4A81D31B09B9D800A693A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZDWater/PrefixHeader.pch";
+				INFOPLIST_FILE = ZDWater/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F4A81D41B09B9D800A693A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZDWater/PrefixHeader.pch";
+				INFOPLIST_FILE = ZDWater/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9F4A81D61B09B9D800A693A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZDWaterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDWater.app/ZDWater";
+			};
+			name = Debug;
+		};
+		9F4A81D71B09B9D800A693A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZDWaterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDWater.app/ZDWater";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F4A81AA1B09B9D800A693A7 /* Build configuration list for PBXProject "ZDWater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F4A81D01B09B9D800A693A7 /* Debug */,
+				9F4A81D11B09B9D800A693A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F4A81D21B09B9D800A693A7 /* Build configuration list for PBXNativeTarget "ZDWater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F4A81D31B09B9D800A693A7 /* Debug */,
+				9F4A81D41B09B9D800A693A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F4A81D51B09B9D800A693A7 /* Build configuration list for PBXNativeTarget "ZDWaterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F4A81D61B09B9D800A693A7 /* Debug */,
+				9F4A81D71B09B9D800A693A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F4A81A71B09B9D800A693A7 /* Project object */;
+}
