@@ -38,6 +38,7 @@
 		9F3E1A0C1B13172D008A9638 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E1A021B13172D008A9638 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9F3E1A131B1317C8008A9638 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E1A121B1317C8008A9638 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9F3E1A151B132FD5008A9638 /* WaterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E1A141B132FD5008A9638 /* WaterCell.xib */; };
+		9F3E1A181B133729008A9638 /* RainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E1A171B133729008A9638 /* RainObject.m */; };
 		9F4A81B51B09B9D800A693A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81B41B09B9D800A693A7 /* main.m */; };
 		9F4A81B81B09B9D800A693A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81B71B09B9D800A693A7 /* AppDelegate.m */; };
 		9F4A81C01B09B9D800A693A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4A81BF1B09B9D800A693A7 /* Images.xcassets */; };
@@ -120,6 +121,8 @@
 		9F3E1A111B1317C8008A9638 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9F3E1A121B1317C8008A9638 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		9F3E1A141B132FD5008A9638 /* WaterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCell.xib; sourceTree = "<group>"; };
+		9F3E1A161B133729008A9638 /* RainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainObject.h; sourceTree = "<group>"; };
+		9F3E1A171B133729008A9638 /* RainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainObject.m; sourceTree = "<group>"; };
 		9F4A81AF1B09B9D800A693A7 /* ZDWater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDWater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4A81B31B09B9D800A693A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F4A81B41B09B9D800A693A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 			children = (
 				9F3E19DE1B131046008A9638 /* WaterQuality.h */,
 				9F3E19DF1B131046008A9638 /* WaterQuality.m */,
+				9F3E1A161B133729008A9638 /* RainObject.h */,
+				9F3E1A171B133729008A9638 /* RainObject.m */,
 			);
 			name = "Object ";
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				9F3E19D21B12F709008A9638 /* MenuViewController.m in Sources */,
 				9F3E1A071B13172D008A9638 /* ASIDataDecompressor.m in Sources */,
 				9F4A81DE1B09BA6400A693A7 /* RootNavigationController.m in Sources */,
+				9F3E1A181B133729008A9638 /* RainObject.m in Sources */,
 				9F4A81F51B09D6E400A693A7 /* NotificationCell.m in Sources */,
 				9F3E19BA1B12EFB9008A9638 /* NotificationTableViewController.m in Sources */,
 				9F3E19DA1B12FF76008A9638 /* CustomHeaderView.m in Sources */,

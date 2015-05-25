@@ -7,12 +7,23 @@
 //
 
 #import "RainTableViewController.h"
+#import "RainObject.h"
+#import "RainCell.h"
 
 @interface RainTableViewController ()
+{
+    NSArray *dataSource;
+}
 
 @end
 
 @implementation RainTableViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +33,11 @@
 //    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0,0,self.tableView.frame.size.width,50)];
 //    headView.backgroundColor = [UIColor colorWithRed:35/255.0 green:140/255.0 blue:233/255.0 alpha:1.0f];
 //    self.tableView.tableHeaderView = headView;
+    
+    BOOL ret = [RainObject fetch];
+    if (ret) {
+        dataSource = [RainObject requestRainData];
+    }
     
 }
 
@@ -34,15 +50,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 20;
+    return dataSource.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RainCell" forIndexPath:indexPath];
+    RainCell *cell = (RainCell *)[tableView dequeueReusableCellWithIdentifier:@"RainCell" forIndexPath:indexPath];
     
-    // Configure the cell...
     
+    NSDictionary *dic = [dataSource objectAtIndex:indexPath.row];
+    cell.StationName.text = [dic objectForKey:@"Stnm"]?[dic objectForKey:@"Stnm"] :@"--";
+   // NSString *str = [dic objectForKey:@"Last1Hours"];
+    cell.oneHour.text = [[dic objectForKey:@"Last1Hours"] isEqual:@""] ? @"--" :[dic objectForKey:@"Last1Hours"];
+    
+   // NSLog(@"%@",[dic objectForKey:@"Last1Hours"]);
+    cell.threeHour.text = [[dic objectForKey:@"Last3Hours"] isEqual:@""] ? @"--" : [dic objectForKey:@"Last3Hours"];
+    cell.today.text = [[dic objectForKey:@"Last6Hours"] isEqual:@""] ?@"--" : [dic objectForKey:@"Last6Hours"];
     return cell;
 }
 

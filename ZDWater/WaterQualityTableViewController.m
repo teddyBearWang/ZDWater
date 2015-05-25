@@ -61,7 +61,6 @@ static NSArray *_dataSource = nil;
     cell.stationName.text = [dic objectForKey:@"CZMC"];
     cell.lastestLevel.text = [dic objectForKey:@"JD"];
     cell.warnWater.text = [dic objectForKey:@"WD"];
-    [cell setCellUI:dic];
     
     
     return cell;
