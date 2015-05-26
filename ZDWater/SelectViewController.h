@@ -8,11 +8,18 @@
 
 #import "RootViewController.h"
 
+@protocol SelectItemsDelegate <NSObject>
+
+- (void)selectItemAction:(NSString *)area;
+
+@end
+
 @interface SelectViewController : RootViewController<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *tableView;
 }
 
+@property (nonatomic) id<SelectItemsDelegate>delegate;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end

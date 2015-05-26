@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectViewController.h"
 
-@interface RainTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
+@interface RainTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,SelectItemsDelegate>
 
 @end

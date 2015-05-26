@@ -1,4 +1,4 @@
-//
+ //
 //  RainTableViewController.m
 //  ZDWater
 //
@@ -10,11 +10,10 @@
 #import "RainObject.h"
 #import "RainCell.h"
 #import "UIView+RootView.h"
-#import "SelectViewController.h"
 
 @interface RainTableViewController ()
 {
-    NSArray *dataSource;
+    NSMutableArray *dataSource;
 }
 
 @end
@@ -35,7 +34,8 @@
     
     BOOL ret = [RainObject fetchWithType:@"GetYqInfo" withArea:@"33" withDate:date_str withstart:@"0" withEnd:@"10000"];
     if (ret) {
-        dataSource = [RainObject requestRainData];
+        NSArray *arr = [RainObject requestRainData];
+        dataSource = [NSMutableArray arrayWithArray:arr];
     }
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -58,6 +58,7 @@
 - (void)selectAreaAction:(UIButton *)button
 {
     SelectViewController *select = [[SelectViewController alloc] init];
+    select.delegate = self;
     [self.navigationController pushViewController:select animated:YES];
 }
 
@@ -102,11 +103,30 @@
     UIView *headView = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"RainHeaderView" owner:self options:nil] lastObject];
 
     headView.backgroundColor = BG_COLOR;
-
-    
     return headView;
 }
 
+#pragma mark - SelectItemsDelegate
+
+- (void)selectItemAction:(NSString *)area
+{
+//    //遍历筛选
+//    for (NSDictionary *dic in dataSource) {
+//        if ([[dic objectForKey:@"Adnm"] isEqual:area]) {
+//            [dataSource removeObject:dic];
+//        }
+//    }
+    NSMutableArray *countArr = [NSMutableArray arrayWithArray:dataSource]; //重新复制一个可变数组，保证数组内部每个元素都可以循环到
+    for (int i=0; i<countArr.count; i++) {
+        NSDictionary *dic = [countArr objectAtIndex:i];
+        NSString *str = [dic objectForKey:@"Adnm"];
+        if (![str isEqual:area]) {
+            [dataSource removeObject:dic];
+        }
+    }
+    
+    [self.tableView reloadData];
+}
 
 /*
 // Override to support conditional editing of the table view.
