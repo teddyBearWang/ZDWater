@@ -8,21 +8,46 @@
 
 #import "WaterLevelTableViewController.h"
 #import "CustomHeaderView.h"
+#import "WaterSituation.h"
+#import "WaterCell.h"
 
 @interface WaterLevelTableViewController ()
+{
+    NSArray *waterLevels; //水情数据源
+}
 
 @end
 
 @implementation WaterLevelTableViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+static BOOL ret = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSDate *now = [NSDate date];
+    NSString *date_str = [self getStringWithDate:now];
+    ret = [WaterSituation fetchWithType:@"GetSqInfo" area:@"33" date:date_str start:@"0" end:@"10000"];
+    if (ret) {
+        waterLevels = [WaterSituation requestWaterData];
+    }else{
+        waterLevels = [NSArray arrayWithObject:@"当前暂无水情数据"];
+    }
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+}
+
+//根据时间格式化时间字符串
+- (NSString *)getStringWithDate:(NSDate *)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *date_str = [formatter stringFromDate:date];
+    return date_str;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,16 +59,29 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 20;
+    return waterLevels.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WaterCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    if(ret)
+    {
+        //有数据的时候
+        WaterCell *cell = (WaterCell *)[tableView dequeueReusableCellWithIdentifier:@"WaterCell"];
+        if (cell) {
+            cell = (WaterCell *)[[[NSBundle mainBundle] loadNibNamed:@"WaterCell" owner:nil options:nil] lastObject];
+        }
+        NSDictionary *dic = [waterLevels objectAtIndex:indexPath.row];
+        cell.stationName.text = [[dic objectForKey:@"Stnm"] isEqual:@""] ? @"--" : [dic objectForKey:@"Stnm"];
+        cell.lastestLevel.text = [[dic objectForKey:@"NowValue"] isEqual:@""] ? @"--" : [dic objectForKey:@"NowValue"];
+        cell.warnWater.text = [[dic objectForKey:@"WarningLine"] isEqual:@""] ? @"--" : [dic objectForKey:@"WarningLine"];
+        return cell;
+    }else{
+        //无数据
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WaterCell"];
+        cell.textLabel.text = [waterLevels objectAtIndex:0];
+        return cell;
+    }
 }
 
 

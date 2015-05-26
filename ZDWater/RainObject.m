@@ -9,16 +9,17 @@
 #import "RainObject.h"
 #import "ASIHTTPRequest.h"
 
-#define  URL @"http://115.236.2.245:38027/data.ashx?t=GetYqInfo&results=33$2015-05-25$0$10000"
+//#define  URL @"http://115.236.2.245:38027/data.ashx?t=GetYqInfo&results=33$2015-05-25$0$10000"
 
 @implementation RainObject
 
 
-+ (BOOL)fetch
++ (BOOL)fetchWithType:(NSString *)type withArea:(NSString *)adcd withDate:(NSString *)date withstart:(NSString *)start withEnd:(NSString *)end;
 {
     __block BOOL ret = NO;
     
-    NSURL *url = [NSURL URLWithString:URL];
+    NSString *url_str = [NSString stringWithFormat:@"%@t=%@&results=%@$%@$%@$%@",URL,type,adcd,date,start,end];
+    NSURL *url = [NSURL URLWithString:url_str];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     
     [request setCompletionBlock:^{

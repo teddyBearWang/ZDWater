@@ -10,6 +10,8 @@
 #import "CustomHeaderView.h"
 #import "WaterQuality.h"
 #import "WaterCell.h"
+#import "QualityDetailController.h"
+#import "QualityDetaiObject.h"
 
 @interface WaterQualityTableViewController ()
 
@@ -32,10 +34,29 @@ static NSArray *_dataSource = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BOOL ret = [WaterQuality Fetch];
+    NSDate *now = [NSDate date];
+    NSArray *dates =(NSArray *)[self getRequestDates:now];
+    
+    BOOL ret = [WaterQuality FetchWithType:@"GetSzInfo" withStrat:[dates objectAtIndex:0] withEnd:[dates objectAtIndex:1]];
     if (ret) {
         _dataSource = [WaterQuality RequestData];
     }
+}
+
+- (NSMutableArray *)getRequestDates:(NSDate *)nowDate
+{
+    NSMutableArray *dates = [NSMutableArray array];
+    NSTimeInterval seconds = 24 * 60 *60;
+    //当前时间的前一天
+    NSDate *torrow = [nowDate dateByAddingTimeInterval:seconds];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    //时间字符串
+    NSString *now = [formatter stringFromDate:nowDate];
+    NSString *torrTd = [formatter stringFromDate:torrow];
+    [dates addObject:now];
+    [dates addObject:torrTd];
+    return dates;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,12 +78,11 @@ static NSArray *_dataSource = nil;
     if (cell) {
         cell = (WaterCell *)[[[NSBundle mainBundle] loadNibNamed:@"WaterCell" owner:nil options:nil] lastObject];
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSDictionary *dic = [_dataSource objectAtIndex:indexPath.row];
-    cell.stationName.text = [dic objectForKey:@"CZMC"];
-    cell.lastestLevel.text = [dic objectForKey:@"JD"];
-    cell.warnWater.text = [dic objectForKey:@"WD"];
-    
-    
+    cell.stationName.text = [[dic objectForKey:@"CZMC"] isEqual:@""] ? @"--" : [dic objectForKey:@"CZMC"];
+    cell.lastestLevel.text = [[dic objectForKey:@"JD"] isEqual:@""] ? @"--" : [dic objectForKey:@"JD"];
+    cell.warnWater.text = [[dic objectForKey:@"WD"] isEqual:@""] ? @"--" : [dic objectForKey:@"WD"];
     return cell;
 }
 
@@ -73,6 +93,25 @@ static NSArray *_dataSource = nil;
     view.backgroundColor = BG_COLOR;
     return view;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDate *now = [NSDate date];
+    NSArray *dates =(NSArray *)[self getRequestDates:now]; //时间数组
+    
+    NSDictionary *dic = [_dataSource objectAtIndex:indexPath.row];
+    BOOL ret = [QualityDetaiObject fetchWithType:@"GetSzInfoView" start:[dates objectAtIndex:0] end:[dates objectAtIndex:1] stcd:[dic objectForKey:@"CZBH"]];
+    if (ret) {
+        QualityDetailController *quality = [[QualityDetailController alloc] init];
+        //获取数据源
+        quality.datas = [QualityDetaiObject requestDetailData];
+        [self.navigationController pushViewController:quality animated:YES];
+    }else{
+        //获取数据失败
+    }
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*
