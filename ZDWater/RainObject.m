@@ -28,7 +28,10 @@
             ret = YES;
             NSData *json = (NSData *)request.responseData;
             NSArray *jsonArr = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingMutableLeaves error:nil];
-            rainData = jsonArr;
+          //  rainData = jsonArr;
+            
+            //抛出去一个通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLoadCompleteNotification object:jsonArr];
         }
         
     }];
@@ -37,16 +40,18 @@
         //失败
     }];
     
-    [request startSynchronous];
+    [request startAsynchronous];
     
     
     return ret;
 }
 
+/*
 static NSArray *rainData = nil;
 + (NSArray *)requestRainData
 {
     return rainData;
 }
+ */
 
 @end

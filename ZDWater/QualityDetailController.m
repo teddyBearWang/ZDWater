@@ -55,12 +55,10 @@
 {
     static NSString *Identifier = @"QalityCell";
     QualityCell *cell = (QualityCell *)[tableView dequeueReusableCellWithIdentifier:Identifier];
-    //UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-
     if (cell == nil) {
         cell = [[QualityCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-  
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone; //禁止选中
     NSDictionary *dic = [self.datas objectAtIndex:indexPath.row];
     cell.keyLabel.text = [dic objectForKey:@"type"];
     cell.valueLabel.text = [[dic objectForKey:@"value"] isEqual:@""] ? @"--" : [dic objectForKey:@"value"];

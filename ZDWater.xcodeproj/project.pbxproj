@@ -56,6 +56,15 @@
 		9F88CA811B1457C4003E5047 /* QualityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F88CA801B1457C4003E5047 /* QualityCell.m */; };
 		9F88CA861B145B8F003E5047 /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F88CA851B145B8F003E5047 /* SelectViewController.m */; };
 		9F88CA891B145E49003E5047 /* AreaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F88CA881B145E49003E5047 /* AreaObject.m */; };
+		9FBCD4A51B1556E800732B0C /* contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD49C1B1556E800732B0C /* contact.png */; };
+		9FBCD4A61B1556E800732B0C /* gate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD49D1B1556E800732B0C /* gate.png */; };
+		9FBCD4A71B1556E800732B0C /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD49E1B1556E800732B0C /* notification.png */; };
+		9FBCD4A81B1556E800732B0C /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD49F1B1556E800732B0C /* rain.png */; };
+		9FBCD4A91B1556E800732B0C /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD4A01B1556E800732B0C /* setting.png */; };
+		9FBCD4AA1B1556E800732B0C /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD4A11B1556E800732B0C /* water.png */; };
+		9FBCD4AB1B1556E800732B0C /* waterlevel.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD4A21B1556E800732B0C /* waterlevel.png */; };
+		9FBCD4AC1B1556E800732B0C /* waterQuality.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD4A31B1556E800732B0C /* waterQuality.png */; };
+		9FBCD4AD1B1556E800732B0C /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBCD4A41B1556E800732B0C /* weather.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +172,15 @@
 		9F88CA851B145B8F003E5047 /* SelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewController.m; sourceTree = "<group>"; };
 		9F88CA871B145E49003E5047 /* AreaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaObject.h; sourceTree = "<group>"; };
 		9F88CA881B145E49003E5047 /* AreaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaObject.m; sourceTree = "<group>"; };
+		9FBCD49C1B1556E800732B0C /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact.png; sourceTree = "<group>"; };
+		9FBCD49D1B1556E800732B0C /* gate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gate.png; sourceTree = "<group>"; };
+		9FBCD49E1B1556E800732B0C /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
+		9FBCD49F1B1556E800732B0C /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
+		9FBCD4A01B1556E800732B0C /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		9FBCD4A11B1556E800732B0C /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		9FBCD4A21B1556E800732B0C /* waterlevel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterlevel.png; sourceTree = "<group>"; };
+		9FBCD4A31B1556E800732B0C /* waterQuality.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterQuality.png; sourceTree = "<group>"; };
+		9FBCD4A41B1556E800732B0C /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +325,7 @@
 				9F3E19D31B12FC36008A9638 /* xib */,
 				9F3E19B11B12EF8F008A9638 /* items */,
 				9F4A81BF1B09B9D800A693A7 /* Images.xcassets */,
+				9FBCD49B1B1556D500732B0C /* images */,
 				9F3E19EF1B13171A008A9638 /* ASIHTTPRequest */,
 				9F4A81B21B09B9D800A693A7 /* Supporting Files */,
 			);
@@ -392,6 +411,22 @@
 			name = Rain;
 			sourceTree = "<group>";
 		};
+		9FBCD49B1B1556D500732B0C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9FBCD49C1B1556E800732B0C /* contact.png */,
+				9FBCD49D1B1556E800732B0C /* gate.png */,
+				9FBCD49E1B1556E800732B0C /* notification.png */,
+				9FBCD49F1B1556E800732B0C /* rain.png */,
+				9FBCD4A01B1556E800732B0C /* setting.png */,
+				9FBCD4A11B1556E800732B0C /* water.png */,
+				9FBCD4A21B1556E800732B0C /* waterlevel.png */,
+				9FBCD4A31B1556E800732B0C /* waterQuality.png */,
+				9FBCD4A41B1556E800732B0C /* weather.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,12 +508,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBCD4AB1B1556E800732B0C /* waterlevel.png in Resources */,
+				9FBCD4AC1B1556E800732B0C /* waterQuality.png in Resources */,
 				9F3E19D71B12FE77008A9638 /* CustomHeaderView.xib in Resources */,
+				9FBCD4A81B1556E800732B0C /* rain.png in Resources */,
 				9F3E19B01B12EF6F008A9638 /* Main.storyboard in Resources */,
+				9FBCD4A71B1556E800732B0C /* notification.png in Resources */,
 				9F3E19D51B12FC58008A9638 /* RainHeaderView.xib in Resources */,
+				9FBCD4A91B1556E800732B0C /* setting.png in Resources */,
 				9F3E1A151B132FD5008A9638 /* WaterCell.xib in Resources */,
+				9FBCD4A61B1556E800732B0C /* gate.png in Resources */,
+				9FBCD4AD1B1556E800732B0C /* weather.png in Resources */,
 				9F4A81E61B09BCCD00A693A7 /* Login.storyboard in Resources */,
 				9F4A81C01B09B9D800A693A7 /* Images.xcassets in Resources */,
+				9FBCD4A51B1556E800732B0C /* contact.png in Resources */,
+				9FBCD4AA1B1556E800732B0C /* water.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

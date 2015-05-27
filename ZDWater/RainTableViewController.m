@@ -23,8 +23,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+  //  [self.tableView reloadData];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,12 +33,11 @@
     NSDate *now = [NSDate date];
     NSString *date_str = [self requestDate:now];
     
-    BOOL ret = [RainObject fetchWithType:@"GetYqInfo" withArea:@"33" withDate:date_str withstart:@"0" withEnd:@"10000"];
-    if (ret) {
-        NSArray *arr = [RainObject requestRainData];
-        dataSource = [NSMutableArray arrayWithArray:arr];
-    }
-    
+   BOOL ret = [RainObject fetchWithType:@"GetYqInfo" withArea:@"33" withDate:date_str withstart:@"0" withEnd:@"10000"];
+    //if (ret) {
+      //  NSArray *arr = [RainObject requestRainData];
+       // dataSource = [NSMutableArray arrayWithArray:arr];
+    //}
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = (CGRect){0,0,60,40};
     [btn setCorners:5.0];
@@ -47,11 +47,19 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = item;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadCompleteAction:) name:kLoadCompleteNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//页面消失的时候
+- (void)viewWillDisappear:(BOOL)animated
+{
+    //移除详细对象
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kLoadCompleteNotification object:nil];
 }
 #pragma  mark - Private Method
 //筛选按钮
@@ -69,6 +77,14 @@
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSString *date_str = [formatter stringFromDate:date];
     return date_str;
+    
+}
+
+- (void)loadCompleteAction:(NSNotification *)notification
+{
+    NSArray *array = (NSArray *)notification.object;
+    dataSource = [NSMutableArray arrayWithArray:array];
+    [self.tableView reloadData];
     
 }
 
@@ -106,16 +122,15 @@
     return headView;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 #pragma mark - SelectItemsDelegate
 
 - (void)selectItemAction:(NSString *)area
 {
-//    //遍历筛选
-//    for (NSDictionary *dic in dataSource) {
-//        if ([[dic objectForKey:@"Adnm"] isEqual:area]) {
-//            [dataSource removeObject:dic];
-//        }
-//    }
     NSMutableArray *countArr = [NSMutableArray arrayWithArray:dataSource]; //重新复制一个可变数组，保证数组内部每个元素都可以循环到
     for (int i=0; i<countArr.count; i++) {
         NSDictionary *dic = [countArr objectAtIndex:i];
@@ -127,50 +142,5 @@
     
     [self.tableView reloadData];
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -29,6 +29,7 @@
             NSData *json = (NSData *)request.responseData;
             NSArray *jsonArr = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingMutableLeaves error:nil];
             _waterData = jsonArr;
+
         }
         
     }];

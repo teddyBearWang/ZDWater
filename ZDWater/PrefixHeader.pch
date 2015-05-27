@@ -15,4 +15,7 @@
 
 #define BG_COLOR [UIColor colorWithRed:246/255.0 green:246/255.0 blue:246/255.0 alpha:1.0f]
 #define URL @"http://115.236.2.245:38027/Data.ashx?"
+
+//定义一个数据下载完成的通知
+#define kLoadCompleteNotification  @"kLoadCompleteNotification"
 #endif
