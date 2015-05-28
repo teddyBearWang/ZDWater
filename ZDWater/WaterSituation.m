@@ -8,6 +8,7 @@
 
 #import "WaterSituation.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @implementation WaterSituation
 
@@ -15,10 +16,12 @@
 + (BOOL)fetchWithType:(NSString *)type area:(NSString *)adcd date:(NSString *)date start:(NSString *)start end:(NSString *)end
 {
     __block BOOL ret = NO;
-    
-    NSString *url_str = [NSString stringWithFormat:@"%@t=%@&results=%@$%@$%@$%@",URL,type,adcd,date,start,end];
-    NSURL *url = [NSURL URLWithString:url_str];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+   // NSString *url_str = [NSString stringWithFormat:@"%@t=%@&results=%@$%@$%@$%@",URL,type,adcd,date,start,end];
+    NSString *result = [NSString stringWithFormat:@"%@$%@$%@$%@",adcd,date,start,end];
+    NSURL *url = [NSURL URLWithString:URL];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:type forKey:@"t"];
+    [request setPostValue:result forKey:@"results"];
     
     [request setCompletionBlock:^{
         //成功

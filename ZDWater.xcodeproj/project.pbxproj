@@ -50,6 +50,21 @@
 		9F4A81EC1B09C22F00A693A7 /* UIView+RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81EB1B09C22F00A693A7 /* UIView+RootView.m */; };
 		9F4A81F51B09D6E400A693A7 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81F41B09D6E400A693A7 /* NotificationCell.m */; };
 		9F4A81F81B09DC9800A693A7 /* RainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81F71B09DC9800A693A7 /* RainCell.m */; };
+		9F746CCD1B16E591001ACC91 /* WaterYield.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CCC1B16E591001ACC91 /* WaterYield.m */; };
+		9F746CD01B16F79B001ACC91 /* GateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CCF1B16F79B001ACC91 /* GateObject.m */; };
+		9F746CD61B16FFBD001ACC91 /* CustomDateActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CD41B16FFBD001ACC91 /* CustomDateActionSheet.m */; };
+		9F746CD71B16FFBD001ACC91 /* CustomDateActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F746CD51B16FFBD001ACC91 /* CustomDateActionSheet.xib */; };
+		9F746CD91B17025B001ACC91 /* bg_023@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F746CD81B17025B001ACC91 /* bg_023@2x.png */; };
+		9F746CDB1B170275001ACC91 /* btn_021@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F746CDA1B170275001ACC91 /* btn_021@2x.png */; };
+		9F746CDD1B17028A001ACC91 /* btn_020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F746CDC1B17028A001ACC91 /* btn_020@2x.png */; };
+		9F746CEB1B1721A5001ACC91 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CE01B1721A5001ACC91 /* UUBar.m */; };
+		9F746CEC1B1721A5001ACC91 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CE21B1721A5001ACC91 /* UUBarChart.m */; };
+		9F746CED1B1721A5001ACC91 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CE41B1721A5001ACC91 /* UUChart.m */; };
+		9F746CEE1B1721A5001ACC91 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CE61B1721A5001ACC91 /* UUChartLabel.m */; };
+		9F746CEF1B1721A5001ACC91 /* UUColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CE81B1721A5001ACC91 /* UUColor.m */; };
+		9F746CF01B1721A5001ACC91 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CEA1B1721A5001ACC91 /* UULineChart.m */; };
+		9F746CF41B172229001ACC91 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CF31B172229001ACC91 /* ChartViewController.m */; };
+		9F746CF71B1723D5001ACC91 /* ChartObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CF61B1723D5001ACC91 /* ChartObject.m */; };
 		9F88CA781B14171D003E5047 /* WaterSituation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F88CA771B14171D003E5047 /* WaterSituation.m */; };
 		9F88CA7B1B144098003E5047 /* QualityDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F88CA7A1B144098003E5047 /* QualityDetailController.m */; };
 		9F88CA7E1B1440FB003E5047 /* QualityDetaiObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F88CA7D1B1440FB003E5047 /* QualityDetaiObject.m */; };
@@ -160,6 +175,32 @@
 		9F4A81F41B09D6E400A693A7 /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
 		9F4A81F61B09DC9800A693A7 /* RainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainCell.h; sourceTree = "<group>"; };
 		9F4A81F71B09DC9800A693A7 /* RainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainCell.m; sourceTree = "<group>"; };
+		9F746CCB1B16E591001ACC91 /* WaterYield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterYield.h; sourceTree = "<group>"; };
+		9F746CCC1B16E591001ACC91 /* WaterYield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterYield.m; sourceTree = "<group>"; };
+		9F746CCE1B16F79B001ACC91 /* GateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateObject.h; sourceTree = "<group>"; };
+		9F746CCF1B16F79B001ACC91 /* GateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateObject.m; sourceTree = "<group>"; };
+		9F746CD31B16FFBD001ACC91 /* CustomDateActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDateActionSheet.h; sourceTree = "<group>"; };
+		9F746CD41B16FFBD001ACC91 /* CustomDateActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDateActionSheet.m; sourceTree = "<group>"; };
+		9F746CD51B16FFBD001ACC91 /* CustomDateActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDateActionSheet.xib; sourceTree = "<group>"; };
+		9F746CD81B17025B001ACC91 /* bg_023@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_023@2x.png"; sourceTree = "<group>"; };
+		9F746CDA1B170275001ACC91 /* btn_021@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_021@2x.png"; sourceTree = "<group>"; };
+		9F746CDC1B17028A001ACC91 /* btn_020@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_020@2x.png"; sourceTree = "<group>"; };
+		9F746CDF1B1721A5001ACC91 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
+		9F746CE01B1721A5001ACC91 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
+		9F746CE11B1721A5001ACC91 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
+		9F746CE21B1721A5001ACC91 /* UUBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBarChart.m; sourceTree = "<group>"; };
+		9F746CE31B1721A5001ACC91 /* UUChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChart.h; sourceTree = "<group>"; };
+		9F746CE41B1721A5001ACC91 /* UUChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChart.m; sourceTree = "<group>"; };
+		9F746CE51B1721A5001ACC91 /* UUChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartLabel.h; sourceTree = "<group>"; };
+		9F746CE61B1721A5001ACC91 /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
+		9F746CE71B1721A5001ACC91 /* UUColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUColor.h; sourceTree = "<group>"; };
+		9F746CE81B1721A5001ACC91 /* UUColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUColor.m; sourceTree = "<group>"; };
+		9F746CE91B1721A5001ACC91 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
+		9F746CEA1B1721A5001ACC91 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
+		9F746CF21B172229001ACC91 /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		9F746CF31B172229001ACC91 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
+		9F746CF51B1723D5001ACC91 /* ChartObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartObject.h; sourceTree = "<group>"; };
+		9F746CF61B1723D5001ACC91 /* ChartObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartObject.m; sourceTree = "<group>"; };
 		9F88CA761B14171D003E5047 /* WaterSituation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterSituation.h; sourceTree = "<group>"; };
 		9F88CA771B14171D003E5047 /* WaterSituation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterSituation.m; sourceTree = "<group>"; };
 		9F88CA791B144098003E5047 /* QualityDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QualityDetailController.h; sourceTree = "<group>"; };
@@ -209,6 +250,7 @@
 		9F3E19B11B12EF8F008A9638 /* items */ = {
 			isa = PBXGroup;
 			children = (
+				9F746CF11B17220C001ACC91 /* chartView */,
 				9F88CA831B145B6B003E5047 /* Rain */,
 				9F88CA821B145B5A003E5047 /* WaterQuality */,
 				9F3E19B81B12EFB9008A9638 /* NotificationTableViewController.h */,
@@ -252,6 +294,12 @@
 				9F88CA7D1B1440FB003E5047 /* QualityDetaiObject.m */,
 				9F88CA871B145E49003E5047 /* AreaObject.h */,
 				9F88CA881B145E49003E5047 /* AreaObject.m */,
+				9F746CCB1B16E591001ACC91 /* WaterYield.h */,
+				9F746CCC1B16E591001ACC91 /* WaterYield.m */,
+				9F746CCE1B16F79B001ACC91 /* GateObject.h */,
+				9F746CCF1B16F79B001ACC91 /* GateObject.m */,
+				9F746CF51B1723D5001ACC91 /* ChartObject.h */,
+				9F746CF61B1723D5001ACC91 /* ChartObject.m */,
 			);
 			name = http;
 			sourceTree = "<group>";
@@ -325,6 +373,8 @@
 				9F3E19D31B12FC36008A9638 /* xib */,
 				9F3E19B11B12EF8F008A9638 /* items */,
 				9F4A81BF1B09B9D800A693A7 /* Images.xcassets */,
+				9F746CDE1B172198001ACC91 /* Chart */,
+				9F746CD21B16FF33001ACC91 /* Until */,
 				9FBCD49B1B1556D500732B0C /* images */,
 				9F3E19EF1B13171A008A9638 /* ASIHTTPRequest */,
 				9F4A81B21B09B9D800A693A7 /* Supporting Files */,
@@ -389,6 +439,44 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
+		9F746CD21B16FF33001ACC91 /* Until */ = {
+			isa = PBXGroup;
+			children = (
+				9F746CD31B16FFBD001ACC91 /* CustomDateActionSheet.h */,
+				9F746CD41B16FFBD001ACC91 /* CustomDateActionSheet.m */,
+				9F746CD51B16FFBD001ACC91 /* CustomDateActionSheet.xib */,
+			);
+			name = Until;
+			sourceTree = "<group>";
+		};
+		9F746CDE1B172198001ACC91 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				9F746CDF1B1721A5001ACC91 /* UUBar.h */,
+				9F746CE01B1721A5001ACC91 /* UUBar.m */,
+				9F746CE11B1721A5001ACC91 /* UUBarChart.h */,
+				9F746CE21B1721A5001ACC91 /* UUBarChart.m */,
+				9F746CE31B1721A5001ACC91 /* UUChart.h */,
+				9F746CE41B1721A5001ACC91 /* UUChart.m */,
+				9F746CE51B1721A5001ACC91 /* UUChartLabel.h */,
+				9F746CE61B1721A5001ACC91 /* UUChartLabel.m */,
+				9F746CE71B1721A5001ACC91 /* UUColor.h */,
+				9F746CE81B1721A5001ACC91 /* UUColor.m */,
+				9F746CE91B1721A5001ACC91 /* UULineChart.h */,
+				9F746CEA1B1721A5001ACC91 /* UULineChart.m */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		9F746CF11B17220C001ACC91 /* chartView */ = {
+			isa = PBXGroup;
+			children = (
+				9F746CF21B172229001ACC91 /* ChartViewController.h */,
+				9F746CF31B172229001ACC91 /* ChartViewController.m */,
+			);
+			name = chartView;
+			sourceTree = "<group>";
+		};
 		9F88CA821B145B5A003E5047 /* WaterQuality */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +502,9 @@
 		9FBCD49B1B1556D500732B0C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9F746CDC1B17028A001ACC91 /* btn_020@2x.png */,
+				9F746CDA1B170275001ACC91 /* btn_021@2x.png */,
+				9F746CD81B17025B001ACC91 /* bg_023@2x.png */,
 				9FBCD49C1B1556E800732B0C /* contact.png */,
 				9FBCD49D1B1556E800732B0C /* gate.png */,
 				9FBCD49E1B1556E800732B0C /* notification.png */,
@@ -509,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FBCD4AB1B1556E800732B0C /* waterlevel.png in Resources */,
+				9F746CDB1B170275001ACC91 /* btn_021@2x.png in Resources */,
 				9FBCD4AC1B1556E800732B0C /* waterQuality.png in Resources */,
 				9F3E19D71B12FE77008A9638 /* CustomHeaderView.xib in Resources */,
 				9FBCD4A81B1556E800732B0C /* rain.png in Resources */,
@@ -518,8 +610,11 @@
 				9FBCD4A91B1556E800732B0C /* setting.png in Resources */,
 				9F3E1A151B132FD5008A9638 /* WaterCell.xib in Resources */,
 				9FBCD4A61B1556E800732B0C /* gate.png in Resources */,
+				9F746CD71B16FFBD001ACC91 /* CustomDateActionSheet.xib in Resources */,
 				9FBCD4AD1B1556E800732B0C /* weather.png in Resources */,
 				9F4A81E61B09BCCD00A693A7 /* Login.storyboard in Resources */,
+				9F746CDD1B17028A001ACC91 /* btn_020@2x.png in Resources */,
+				9F746CD91B17025B001ACC91 /* bg_023@2x.png in Resources */,
 				9F4A81C01B09B9D800A693A7 /* Images.xcassets in Resources */,
 				9FBCD4A51B1556E800732B0C /* contact.png in Resources */,
 				9FBCD4AA1B1556E800732B0C /* water.png in Resources */,
@@ -546,18 +641,26 @@
 				9F4A81B81B09B9D800A693A7 /* AppDelegate.m in Sources */,
 				9F3E1A0A1B13172D008A9638 /* ASIHTTPRequest.m in Sources */,
 				9F4A81EC1B09C22F00A693A7 /* UIView+RootView.m in Sources */,
+				9F746CF01B1721A5001ACC91 /* UULineChart.m in Sources */,
 				9F3E1A131B1317C8008A9638 /* Reachability.m in Sources */,
 				9F4A81DB1B09BA3400A693A7 /* RootViewController.m in Sources */,
+				9F746CEC1B1721A5001ACC91 /* UUBarChart.m in Sources */,
 				9F3E19D21B12F709008A9638 /* MenuViewController.m in Sources */,
 				9F3E1A071B13172D008A9638 /* ASIDataDecompressor.m in Sources */,
 				9F4A81DE1B09BA6400A693A7 /* RootNavigationController.m in Sources */,
 				9F3E1A181B133729008A9638 /* RainObject.m in Sources */,
+				9F746CF41B172229001ACC91 /* ChartViewController.m in Sources */,
+				9F746CEE1B1721A5001ACC91 /* UUChartLabel.m in Sources */,
 				9F4A81F51B09D6E400A693A7 /* NotificationCell.m in Sources */,
+				9F746CCD1B16E591001ACC91 /* WaterYield.m in Sources */,
+				9F746CED1B1721A5001ACC91 /* UUChart.m in Sources */,
 				9F3E19BA1B12EFB9008A9638 /* NotificationTableViewController.m in Sources */,
 				9F3E19DA1B12FF76008A9638 /* CustomHeaderView.m in Sources */,
 				9F4A81F81B09DC9800A693A7 /* RainCell.m in Sources */,
 				9F88CA781B14171D003E5047 /* WaterSituation.m in Sources */,
 				9F3E1A0C1B13172D008A9638 /* ASINetworkQueue.m in Sources */,
+				9F746CD01B16F79B001ACC91 /* GateObject.m in Sources */,
+				9F746CEB1B1721A5001ACC91 /* UUBar.m in Sources */,
 				9F3E19CB1B12EFE6008A9638 /* WaterYieldTableViewController.m in Sources */,
 				9F3E1A081B13172D008A9638 /* ASIDownloadCache.m in Sources */,
 				9F3E19CA1B12EFE6008A9638 /* WaterQualityTableViewController.m in Sources */,
@@ -565,6 +668,7 @@
 				9F88CA811B1457C4003E5047 /* QualityCell.m in Sources */,
 				9F3E1A091B13172D008A9638 /* ASIFormDataRequest.m in Sources */,
 				9F4A81B51B09B9D800A693A7 /* main.m in Sources */,
+				9F746CF71B1723D5001ACC91 /* ChartObject.m in Sources */,
 				9F3E19BD1B12EFCE008A9638 /* RainTableViewController.m in Sources */,
 				9F3E19C91B12EFE6008A9638 /* WaterLevelTableViewController.m in Sources */,
 				9F3E1A0B1B13172D008A9638 /* ASIInputStream.m in Sources */,
@@ -572,6 +676,8 @@
 				9F88CA7B1B144098003E5047 /* QualityDetailController.m in Sources */,
 				9F3E1A061B13172D008A9638 /* ASIDataCompressor.m in Sources */,
 				9F3E19B41B12EF9B008A9638 /* ContactViewController.m in Sources */,
+				9F746CEF1B1721A5001ACC91 /* UUColor.m in Sources */,
+				9F746CD61B16FFBD001ACC91 /* CustomDateActionSheet.m in Sources */,
 				9F4A81E91B09BD2900A693A7 /* LoginViewController.m in Sources */,
 				9F3E19CF1B12F000008A9638 /* WaterCell.m in Sources */,
 				9F3E19C01B12EFD6008A9638 /* SettingViewController.m in Sources */,

@@ -1,4 +1,4 @@
- //
+  //
 //  RainTableViewController.m
 //  ZDWater
 //
@@ -10,6 +10,7 @@
 #import "RainObject.h"
 #import "RainCell.h"
 #import "UIView+RootView.h"
+#import "ChartViewController.h"
 
 @interface RainTableViewController ()
 {
@@ -24,20 +25,36 @@
 {
     [super viewWillAppear:animated];
   //  [self.tableView reloadData];
+    
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+    
     NSDate *now = [NSDate date];
     NSString *date_str = [self requestDate:now];
     
    BOOL ret = [RainObject fetchWithType:@"GetYqInfo" withArea:@"33" withDate:date_str withstart:@"0" withEnd:@"10000"];
-    //if (ret) {
-      //  NSArray *arr = [RainObject requestRainData];
-       // dataSource = [NSMutableArray arrayWithArray:arr];
-    //}
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = (CGRect){0,0,60,40};
     [btn setCorners:5.0];
@@ -124,6 +141,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ChartViewController *chart = [[ChartViewController alloc] init];
+    [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

@@ -12,8 +12,9 @@
 #import "WaterCell.h"
 #import "QualityDetailController.h"
 #import "QualityDetaiObject.h"
+#import "CustomDateActionSheet.h"
 
-@interface WaterQualityTableViewController ()
+@interface WaterQualityTableViewController ()<UIActionSheetDelegate>
 
 
 @end
@@ -41,6 +42,21 @@ static NSArray *_dataSource = nil;
     if (ret) {
         _dataSource = [WaterQuality RequestData];
     }
+    
+    UIButton *selectTime_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    selectTime_btn.frame = (CGRect){0,0,60,40};
+    selectTime_btn.backgroundColor = [UIColor clearColor];
+    selectTime_btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [selectTime_btn setTitle:@"时间选择" forState:UIControlStateNormal];
+    [selectTime_btn addTarget:self action:@selector(selectTimeAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:selectTime_btn];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (NSMutableArray *)getRequestDates:(NSDate *)nowDate
@@ -59,10 +75,22 @@ static NSArray *_dataSource = nil;
     return dates;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//时间选择
+- (void)selectTimeAction:(id)sender
+{
+    CustomDateActionSheet *sheet = [[CustomDateActionSheet alloc] initWithTitle:@"时间选择" delegate:self];
+    [sheet showInView:self.view];
 }
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        CustomDateActionSheet *sheet = (CustomDateActionSheet *)actionSheet;
+        NSLog(@"选择的声音:%@",sheet.selectedTime);
+    }
+}
+
 
 #pragma mark - Table view data source
 

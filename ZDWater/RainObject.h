@@ -16,10 +16,13 @@
  * start 从那条数据开始
  * end 从那条数据结束
  */
-
+//获取水情列表数据
 + (BOOL)fetchWithType:(NSString *)type withArea:(NSString *)adcd withDate:(NSString *)date withstart:(NSString *)start withEnd:(NSString *)end;
 
 /*
 + (NSArray *)requestRainData;
+ 
+ 
 */
+
 @end

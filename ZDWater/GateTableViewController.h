@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GateTableViewController : UITableViewController
+@interface GateTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end
