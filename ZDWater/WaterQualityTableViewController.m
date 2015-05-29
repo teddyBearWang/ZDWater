@@ -75,6 +75,15 @@ static NSArray *_dataSource = nil;
     return dates;
 }
 
+- (NSDate *)getDateFromString:(NSString *)str
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [formatter dateFromString:str];
+    NSDate *date1 = [date dateByAddingTimeInterval:24*60*60];//由于存在时间差，实际的日期应该加上1
+    return date1;
+}
+
 //时间选择
 - (void)selectTimeAction:(id)sender
 {
@@ -87,7 +96,14 @@ static NSArray *_dataSource = nil;
 {
     if (buttonIndex == 1) {
         CustomDateActionSheet *sheet = (CustomDateActionSheet *)actionSheet;
-        NSLog(@"选择的声音:%@",sheet.selectedTime);
+        
+        NSDate *time = [self getDateFromString:sheet.selectedTime];
+        NSArray *dates =(NSArray *)[self getRequestDates:time];
+        BOOL ret = [WaterQuality FetchWithType:@"GetSzInfo" withStrat:[dates objectAtIndex:0] withEnd:[dates objectAtIndex:1]];
+        if (ret) {
+            _dataSource = [WaterQuality RequestData];
+        }
+        [self.tableView reloadData];
     }
 }
 

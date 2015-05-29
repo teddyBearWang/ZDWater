@@ -23,7 +23,8 @@
 {
     __block BOOL ret = NO;
     
-    date = @"2015-04-27 16:35:25";
+    date = @"2015-04-27 16:35:25"; //雨情
+    //date = @"2015-04-14"; //水位
     NSString *str = [NSString stringWithFormat:@"%@$%@",stcd,date];
     NSURL *url = [NSURL URLWithString:URL];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -38,13 +39,15 @@
             NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             
             if (x_Labels == nil) {
-                //[x_Labels removeAllObjects];
                 x_Labels = [NSMutableArray array];
+            }else if(x_Labels.count != 0){
+                [x_Labels removeAllObjects];
             }
             
             if (y_values == nil) {
-                //[y_values removeAllObjects];
                 y_values = [NSMutableArray array];
+            }else if (y_values.count != 0){
+                [y_values removeAllObjects];
             }
             for (int i=0; i<arr.count; i++) {
                 NSDictionary *dic = [arr objectAtIndex:i];
@@ -52,8 +55,6 @@
                 [y_values addObject:[dic objectForKey:@"value"]];
             }
         }
-        NSLog(@"%@",x_Labels);
-        NSLog(@"%@",y_values);
     }];
     
     [request setFailedBlock:^{
@@ -61,7 +62,6 @@
     }];
     
     [request startSynchronous];
-    
     
     return ret;
 }

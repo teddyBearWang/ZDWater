@@ -70,12 +70,12 @@
 
     float level = (_yValueMax-_yValueMin) /4.0; //7.75
     CGFloat chartCavanHeight = self.frame.size.height - UULabelHeight*3; //230
+   // CGFloat chartCavanHeight = self.frame.size.height ;
     CGFloat levelHeight = chartCavanHeight /4.0; //57.5px
     
     for (int i=0; i<5; i++) {
-        UUChartLabel * label = [[UUChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight-i*levelHeight+5, UUYLabelwidth, UULabelHeight)];
-        float f = level * i+_yValueMin;
-		label.text = [NSString stringWithFormat:@"%.1f",level * i+_yValueMin];
+        UUChartLabel * label = [[UUChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight-i*levelHeight, UUYLabelwidth, UULabelHeight)];
+		label.text = [NSString stringWithFormat:@"%.2f",level * i+_yValueMin];
 		[self addSubview:label];
     }
 	
@@ -102,8 +102,7 @@
     
     float max = (([xLabels count]-1)*_xLabelWidth + chartMargin)+_xLabelWidth;
     if (myScrollView.frame.size.width < max-10) {
-        NSLog(@"scrollVIew 的宽度是：%lf, 高度是：%lf",max,self.frame.size.height);
-        myScrollView.contentSize = CGSizeMake(max, self.frame.size.height+10);
+        myScrollView.contentSize = CGSizeMake(max, self.frame.size.height);
     }
 }
 -(void)setColors:(NSArray *)colors
@@ -117,7 +116,7 @@
 -(void)strokeChart
 {
     
-    CGFloat chartCavanHeight = self.frame.size.height - UULabelHeight*3;
+    CGFloat chartCavanHeight = self.frame.size.height - 3*UULabelHeight;
 	
     for (int i=0; i<_yValues.count; i++) {
         if (i==2)
@@ -135,8 +134,7 @@
             
             //显示的label
             if ([valueString floatValue] > 0.0) {
-                NSLog(@"scroll 宽度:%lf ------> bar 高度：%lf",myScrollView.frame.size.height,bar.frame.size.height);
-                float y = myScrollView.frame.size.height - (UULabelHeight*3+(bar.frame.size.height * grade));
+                float y = myScrollView.frame.size.height - (UULabelHeight*4+(bar.frame.size.height * grade));
                 UUChartLabel *valueLabel = [[UUChartLabel alloc] initWithFrame:CGRectMake(bar.frame.origin.x, y, bar.frame.size.width, UULabelHeight)];
                 valueLabel.text = valueString;
                 [myScrollView addSubview:valueLabel];

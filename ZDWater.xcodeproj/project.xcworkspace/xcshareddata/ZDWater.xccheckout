@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B476EC13-4217-48E2-B797-F891EAA8C829</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ZDWater</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>38BF12EAE02F7D9B18F336A9D297FFF43B62F507</key>
 		<string>https://github.com/teddyBearWang/ZDWater.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ZDWater.xcodeproj</string>
+	<string>ZDWater.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>38BF12EAE02F7D9B18F336A9D297FFF43B62F507</key>

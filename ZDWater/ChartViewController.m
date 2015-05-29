@@ -15,19 +15,13 @@
     UUChart *chartView;
     NSArray *x_Labels;
     NSArray *y_Values;
+    UILabel *_showTimeLabel;// 显示时间label
+    int screen_heiht; //屏幕高度
 }
 
 @end
 
 @implementation ChartViewController
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -42,28 +36,91 @@
             [invocation setArgument:&val atIndex:2];
             [invocation invoke];
     }
-    
+    //保存下屏幕竖着的时候的高度
+    screen_heiht = self.view.frame.size.height;
+    [self initChartView];
+}
+
+//创建chartVIew
+- (void)initChartView
+{
     if (chartView) {
         [chartView removeFromSuperview];
         chartView = nil;
     }
     
+    NSLog(@"高度：%d",screen_heiht);
     chartView = [[UUChart alloc]initwithUUChartDataFrame:CGRectMake(10, 40,
-                                                                    self.view.frame.size.height, 240)
+                                                                    screen_heiht, 240)
                                               withSource:self
-                                               withStyle:UUChartBarStyle];
+                                               withStyle:self.chartType == 1?UUChartLineStyle: UUChartBarStyle];
     [chartView showInView:self.view];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //设置标题
+    self.title = self.title_name;
+    
+    UIView *dateView = [self createSelectTimeView];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:dateView];
+    self.navigationItem.rightBarButtonItem = item;
 
-    BOOL ret = [ChartObject fetcChartDataWithType:@"GetStDayYL" stcd:@"8217" WithDate:@"2015-05-24"];
+    NSString *date_str = [self requestDate:[NSDate date]];
+    BOOL ret = [ChartObject fetcChartDataWithType:self.requestType stcd:self.stcd WithDate:date_str];
     if (ret) {
         x_Labels = (NSArray *)[ChartObject requestXLables];
         y_Values = (NSArray *)[ChartObject requestYValues];
     }
+}
+
+- (UIView *)createSelectTimeView
+{
+    UIView *bg_view = [[UIView alloc] initWithFrame:(CGRect){0,0,120,30}];
+    bg_view.backgroundColor = [UIColor clearColor];
+    UIButton *back_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    back_btn.frame = (CGRect){0,5,10,20};
+    [back_btn setBackgroundImage:[UIImage imageNamed:@"left"] forState:UIControlStateNormal];
+    back_btn.tag = 201;
+    [back_btn addTarget:self action:@selector(selectDateAction:) forControlEvents:UIControlEventTouchUpInside];
+    [bg_view addSubview:back_btn];
+    
+    UIButton *next_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    next_btn.frame = (CGRect){110,5,10,20};
+    [next_btn setBackgroundImage:[UIImage imageNamed:@"right"] forState:UIControlStateNormal];
+    next_btn.tag = 202;
+    [next_btn addTarget:self action:@selector(selectDateAction:) forControlEvents:UIControlEventTouchUpInside];
+    [bg_view addSubview:next_btn];
+    
+    _showTimeLabel = [[UILabel alloc] initWithFrame:(CGRect){20,0,80,30}];
+    _showTimeLabel.backgroundColor = [UIColor clearColor];
+    _showTimeLabel.text = [self requestDate:[NSDate date]];
+    _showTimeLabel.font = [UIFont systemFontOfSize:15];
+    [bg_view addSubview:_showTimeLabel];
+    
+    return bg_view;
+}
+
+//返回时间字符串
+- (NSString *)requestDate:(NSDate *)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *date_str = [formatter stringFromDate:date];
+    return date_str;
+    
+}
+
+//返回时间字符串
+- (NSDate *)requestDateFromString:(NSString *)date_str
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [formatter dateFromString:date_str];
+    return date;
     
 }
 
@@ -72,23 +129,40 @@
     // Dispose of any resources that can be recreated.
 }
 
+//时间选择
+- (void)selectDateAction:(UIButton *)btn
+{
+    NSDate *current = [self requestDateFromString:_showTimeLabel.text];
+    if (btn.tag == 201) {
+        //时间往前推一天
+        NSDate *back_date = [current dateByAddingTimeInterval:-60*60*24];
+        _showTimeLabel.text = [self requestDate:back_date];
+    }else{
+        //时间往后推一天
+        NSDate *next_date = [current dateByAddingTimeInterval:60*60*24];
+        _showTimeLabel.text = [self requestDate:next_date];
+    }
+    
+    BOOL ret = [ChartObject fetcChartDataWithType:self.requestType stcd:self.stcd WithDate:_showTimeLabel.text];
+    if (ret) {
+        x_Labels = (NSArray *)[ChartObject requestXLables];
+        y_Values = (NSArray *)[ChartObject requestYValues];
+    }
+    
+    [self initChartView];
+}
+
 #pragma mark - UUChartDataSource
 
 //横坐标标题数组
 - (NSArray *)UUChart_xLableArray:(UUChart *)chart
 {
-//    NSArray *xTitles = [NSArray array];
-//    xTitles = @[@"09",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17"];
-//    return xTitles;
     return x_Labels;
 }
 
 //数值多重数组
 - (NSArray *)UUChart_yValueArray:(UUChart *)chart
 {
-//    NSArray *ary1 = @[@"0.5",@"0.0",@"0.0",@"31",@"14.5",@"4.0",@"3.0",@"0.0",@"5"];
-//    NSArray *ary2 = @[@"0.0",@"0.55",@"0.6",@"30",@"10",@"30",@"8.0",@"9.0",@"8"];
-//    return @[ary1,ary2];
     @try {
          return @[y_Values];
     }
@@ -107,7 +181,6 @@
     }else{
         return NO;
     }
-    // return YES;
     
 }
 

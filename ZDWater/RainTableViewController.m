@@ -132,7 +132,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
-   // UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width,40)];
     UIView *headView = (UIView *)[[[NSBundle mainBundle] loadNibNamed:@"RainHeaderView" owner:self options:nil] lastObject];
 
     headView.backgroundColor = BG_COLOR;
@@ -141,7 +140,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *dic = [dataSource objectAtIndex:indexPath.row];
     ChartViewController *chart = [[ChartViewController alloc] init];
+    chart.title_name = dic[@"Stnm"];
+    chart.stcd = dic[@"Stcd"];
+    chart.requestType = @"GetStDayYL";
+    chart.chartType = 2; //表示柱状图
     [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

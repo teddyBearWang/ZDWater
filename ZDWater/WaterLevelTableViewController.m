@@ -10,6 +10,7 @@
 #import "CustomHeaderView.h"
 #import "WaterSituation.h"
 #import "WaterCell.h"
+#import "ChartViewController.h"
 
 @interface WaterLevelTableViewController ()
 {
@@ -23,6 +24,18 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //保证竖屏
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+    
     [self.tableView reloadData];
 }
 static BOOL ret = NO;
@@ -92,6 +105,13 @@ static BOOL ret = NO;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *dic = [waterLevels objectAtIndex:indexPath.row];
+    ChartViewController *chart = [[ChartViewController alloc] init];
+    chart.title_name = dic[@"Stnm"];
+    chart.requestType = @"GetStDaySW";
+    chart.stcd = dic[@"Stcd"];
+    chart.chartType = 1;
+    [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

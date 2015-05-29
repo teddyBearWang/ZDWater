@@ -65,8 +65,13 @@
     CGFloat levelHeight = chartCavanHeight /4.0;
 
     for (int i=0; i<5; i++) {
-        UUChartLabel * label = [[UUChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight-i*levelHeight+5, UUYLabelwidth, UULabelHeight)];
-		label.text = [NSString stringWithFormat:@"%d",(int)(level * i+_yValueMin)];
+       // UUChartLabel * label = [[UUChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight-i*levelHeight+5, UUYLabelwidth, UULabelHeight)];
+         UUChartLabel * label = [[UUChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight-i*levelHeight+5, UUYLabelwidth, UULabelHeight)];
+        NSLog(@"%.2lf",chartCavanHeight-i*levelHeight);
+		//label.text = [NSString stringWithFormat:@"%.2lf",(int)(level * i+_yValueMin)];
+        label.text = [NSString stringWithFormat:@"%.2lf",(level * i+_yValueMin)];
+
+        NSLog(@"y坐标的值%.2lf",(level * i+_yValueMin));
 		[self addSubview:label];
     }
     if ([super respondsToSelector:@selector(setMarkRange:)]) {
@@ -97,8 +102,8 @@
 {
     _xLabels = xLabels;
     CGFloat num = 0;
-    if (xLabels.count>=20) {
-        num=20.0;
+    if (xLabels.count>=24) {
+        num=24.0;
     }else if (xLabels.count<=1){
         num=1.0;
     }else{
@@ -163,7 +168,7 @@
         CGFloat max = [childAry[0] floatValue];
         CGFloat min = [childAry[0] floatValue];
         NSInteger max_i;
-        NSInteger min_i;
+        NSInteger min_i = 0;
         
         for (int j=0; j<childAry.count; j++){
             CGFloat num = [childAry[j] floatValue];
@@ -190,6 +195,7 @@
         CGFloat firstValue = [[childAry objectAtIndex:0] floatValue];
         CGFloat xPosition = (UUYLabelwidth + _xLabelWidth/2.0);
         CGFloat chartCavanHeight = self.frame.size.height - UULabelHeight*3;
+       
         
         float grade = ((float)firstValue-_yValueMin) / ((float)_yValueMax-_yValueMin);
        
@@ -206,7 +212,7 @@
                  index:i
                 isShow:isShowMaxAndMinPoint
                  value:firstValue];
-
+        NSLog(@"第一点的竖坐标:%.2lf",chartCavanHeight - grade * chartCavanHeight+UULabelHeight);
         
         [progressline moveToPoint:CGPointMake(xPosition, chartCavanHeight - grade * chartCavanHeight+UULabelHeight)];
         [progressline setLineWidth:2.0];
@@ -220,7 +226,7 @@
                 
                 CGPoint point = CGPointMake(xPosition+index*_xLabelWidth, chartCavanHeight - grade * chartCavanHeight+UULabelHeight);
                 [progressline addLineToPoint:point];
-                
+                NSLog(@"点的竖坐标:%.2lf",chartCavanHeight - grade * chartCavanHeight+UULabelHeight);
                 BOOL isShowMaxAndMinPoint = YES;
                 if (self.ShowMaxMinArray) {
                     if ([self.ShowMaxMinArray[i] intValue]>0) {
@@ -297,7 +303,7 @@
      label.font = [UIFont systemFontOfSize:10];
      label.textAlignment = NSTextAlignmentCenter;
      label.textColor = view.backgroundColor;
-     label.text = [NSString stringWithFormat:@"%d",(int)value];
+     label.text = [NSString stringWithFormat:@"%.2lf",value];
      [self addSubview:label];
     
     

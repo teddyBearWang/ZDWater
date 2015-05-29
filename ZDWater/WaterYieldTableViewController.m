@@ -10,6 +10,7 @@
 #import "WaterYield.h"
 #import "CustomHeaderView.h"
 #import "WaterCell.h"
+#import "ChartViewController.h"
 
 @interface WaterYieldTableViewController ()
 {
@@ -30,6 +31,16 @@
 static BOOL ret = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
     
     NSDate *data = [NSDate date];
     NSString *date_str = [self getStringWithDate:data];
@@ -94,6 +105,9 @@ static BOOL ret = NO;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *dic = [listData objectAtIndex:indexPath.row];
+    ChartViewController *chart = [[ChartViewController alloc] init];
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

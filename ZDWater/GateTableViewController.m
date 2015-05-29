@@ -10,6 +10,7 @@
 #import "CustomHeaderView.h"
 #import "WaterCell.h"
 #import "GateObject.h"
+#import "ChartViewController.h"
 
 @interface GateTableViewController ()
 {
@@ -23,6 +24,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //保证竖屏
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        int val = UIInterfaceOrientationPortrait;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
     
     [self.tableView reloadData];
 }
@@ -70,6 +82,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *dic = [listData objectAtIndex:indexPath.row];
+    ChartViewController *chart = [[ChartViewController alloc] init];
+    chart.requestType = @"GetZmChart";
+    chart.chartType = 1;//折线图
+    chart.title_name = dic[@"SubStnm"];
+    chart.stcd = dic[@"SubStcd"];
+    [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
