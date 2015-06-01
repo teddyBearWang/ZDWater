@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F37A4DE1B1BE87E005D0F8F /* DoubleChartObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F37A4DD1B1BE87E005D0F8F /* DoubleChartObject.m */; };
 		9F3DD03E1B1800D800F14519 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DD03C1B1800D800F14519 /* right.png */; };
 		9F3DD03F1B1800D800F14519 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DD03D1B1800D800F14519 /* left.png */; };
 		9F3E19B01B12EF6F008A9638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3E19AF1B12EF6F008A9638 /* Main.storyboard */; };
@@ -46,12 +47,12 @@
 		9F4A81C01B09B9D800A693A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4A81BF1B09B9D800A693A7 /* Images.xcassets */; };
 		9F4A81CF1B09B9D800A693A7 /* ZDWaterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81CE1B09B9D800A693A7 /* ZDWaterTests.m */; };
 		9F4A81DB1B09BA3400A693A7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81DA1B09BA3400A693A7 /* RootViewController.m */; };
-		9F4A81DE1B09BA6400A693A7 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81DD1B09BA6400A693A7 /* RootNavigationController.m */; };
 		9F4A81E61B09BCCD00A693A7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4A81E51B09BCCD00A693A7 /* Login.storyboard */; };
 		9F4A81E91B09BD2900A693A7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81E81B09BD2900A693A7 /* LoginViewController.m */; };
 		9F4A81EC1B09C22F00A693A7 /* UIView+RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81EB1B09C22F00A693A7 /* UIView+RootView.m */; };
 		9F4A81F51B09D6E400A693A7 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81F41B09D6E400A693A7 /* NotificationCell.m */; };
 		9F4A81F81B09DC9800A693A7 /* RainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A81F71B09DC9800A693A7 /* RainCell.m */; };
+		9F4AB7911B18757A00B6AE74 /* UINavigationController+Oritent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4AB7901B18757A00B6AE74 /* UINavigationController+Oritent.m */; };
 		9F746CCD1B16E591001ACC91 /* WaterYield.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CCC1B16E591001ACC91 /* WaterYield.m */; };
 		9F746CD01B16F79B001ACC91 /* GateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CCF1B16F79B001ACC91 /* GateObject.m */; };
 		9F746CD61B16FFBD001ACC91 /* CustomDateActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F746CD41B16FFBD001ACC91 /* CustomDateActionSheet.m */; };
@@ -95,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F37A4DC1B1BE87E005D0F8F /* DoubleChartObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleChartObject.h; sourceTree = "<group>"; };
+		9F37A4DD1B1BE87E005D0F8F /* DoubleChartObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleChartObject.m; sourceTree = "<group>"; };
 		9F3DD03C1B1800D800F14519 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		9F3DD03D1B1800D800F14519 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		9F3E19AF1B12EF6F008A9638 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -168,8 +171,6 @@
 		9F4A81CE1B09B9D800A693A7 /* ZDWaterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDWaterTests.m; sourceTree = "<group>"; };
 		9F4A81D91B09BA3400A693A7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		9F4A81DA1B09BA3400A693A7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		9F4A81DC1B09BA6400A693A7 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
-		9F4A81DD1B09BA6400A693A7 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
 		9F4A81E51B09BCCD00A693A7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9F4A81E71B09BD2900A693A7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9F4A81E81B09BD2900A693A7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -179,6 +180,8 @@
 		9F4A81F41B09D6E400A693A7 /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
 		9F4A81F61B09DC9800A693A7 /* RainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainCell.h; sourceTree = "<group>"; };
 		9F4A81F71B09DC9800A693A7 /* RainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainCell.m; sourceTree = "<group>"; };
+		9F4AB78F1B18757A00B6AE74 /* UINavigationController+Oritent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Oritent.h"; sourceTree = "<group>"; };
+		9F4AB7901B18757A00B6AE74 /* UINavigationController+Oritent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Oritent.m"; sourceTree = "<group>"; };
 		9F746CCB1B16E591001ACC91 /* WaterYield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterYield.h; sourceTree = "<group>"; };
 		9F746CCC1B16E591001ACC91 /* WaterYield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterYield.m; sourceTree = "<group>"; };
 		9F746CCE1B16F79B001ACC91 /* GateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateObject.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				9F746CCF1B16F79B001ACC91 /* GateObject.m */,
 				9F746CF51B1723D5001ACC91 /* ChartObject.h */,
 				9F746CF61B1723D5001ACC91 /* ChartObject.m */,
+				9F37A4DC1B1BE87E005D0F8F /* DoubleChartObject.h */,
+				9F37A4DD1B1BE87E005D0F8F /* DoubleChartObject.m */,
 			);
 			name = http;
 			sourceTree = "<group>";
@@ -420,8 +425,8 @@
 				9F4A81EB1B09C22F00A693A7 /* UIView+RootView.m */,
 				9F4A81D91B09BA3400A693A7 /* RootViewController.h */,
 				9F4A81DA1B09BA3400A693A7 /* RootViewController.m */,
-				9F4A81DC1B09BA6400A693A7 /* RootNavigationController.h */,
-				9F4A81DD1B09BA6400A693A7 /* RootNavigationController.m */,
+				9F4AB78F1B18757A00B6AE74 /* UINavigationController+Oritent.h */,
+				9F4AB7901B18757A00B6AE74 /* UINavigationController+Oritent.m */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 				9F3E19B71B12EFA2008A9638 /* GateTableViewController.m in Sources */,
 				9F4A81B81B09B9D800A693A7 /* AppDelegate.m in Sources */,
 				9F3E1A0A1B13172D008A9638 /* ASIHTTPRequest.m in Sources */,
+				9F37A4DE1B1BE87E005D0F8F /* DoubleChartObject.m in Sources */,
 				9F4A81EC1B09C22F00A693A7 /* UIView+RootView.m in Sources */,
 				9F746CF01B1721A5001ACC91 /* UULineChart.m in Sources */,
 				9F3E1A131B1317C8008A9638 /* Reachability.m in Sources */,
@@ -655,7 +661,6 @@
 				9F746CEC1B1721A5001ACC91 /* UUBarChart.m in Sources */,
 				9F3E19D21B12F709008A9638 /* MenuViewController.m in Sources */,
 				9F3E1A071B13172D008A9638 /* ASIDataDecompressor.m in Sources */,
-				9F4A81DE1B09BA6400A693A7 /* RootNavigationController.m in Sources */,
 				9F3E1A181B133729008A9638 /* RainObject.m in Sources */,
 				9F746CF41B172229001ACC91 /* ChartViewController.m in Sources */,
 				9F746CEE1B1721A5001ACC91 /* UUChartLabel.m in Sources */,
@@ -670,6 +675,7 @@
 				9F746CD01B16F79B001ACC91 /* GateObject.m in Sources */,
 				9F746CEB1B1721A5001ACC91 /* UUBar.m in Sources */,
 				9F3E19CB1B12EFE6008A9638 /* WaterYieldTableViewController.m in Sources */,
+				9F4AB7911B18757A00B6AE74 /* UINavigationController+Oritent.m in Sources */,
 				9F3E1A081B13172D008A9638 /* ASIDownloadCache.m in Sources */,
 				9F3E19CA1B12EFE6008A9638 /* WaterQualityTableViewController.m in Sources */,
 				9F3E19CC1B12EFE6008A9638 /* WeatherViewController.m in Sources */,

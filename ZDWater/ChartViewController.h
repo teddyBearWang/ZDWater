@@ -15,4 +15,7 @@
 @property (nonatomic, strong) NSString *stcd; //请求序列号
 @property (nonatomic) int chartType;  //图表类型，1：表示折线图；2：表示柱状图
 
+@property (nonatomic,assign) FunctionType functionType; //表示折线条数
+
+
 @end

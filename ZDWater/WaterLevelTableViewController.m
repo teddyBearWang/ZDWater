@@ -111,6 +111,7 @@ static BOOL ret = NO;
     chart.requestType = @"GetStDaySW";
     chart.stcd = dic[@"Stcd"];
     chart.chartType = 1;
+    chart.functionType = FunctionSingleChart;
     [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

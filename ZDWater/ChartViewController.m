@@ -9,6 +9,8 @@
 #import "ChartViewController.h"
 #import "UUChart.h"
 #import "ChartObject.h"
+#import "DoubleChartObject.h"
+#import "UINavigationController+Oritent.h"
 
 @interface ChartViewController ()<UUChartDataSource>
 {
@@ -36,6 +38,7 @@
             [invocation setArgument:&val atIndex:2];
             [invocation invoke];
     }
+   // [self hengShuPing:YES];
     //保存下屏幕竖着的时候的高度
     screen_heiht = self.view.frame.size.height;
     [self initChartView];
@@ -49,15 +52,43 @@
         chartView = nil;
     }
     
-    NSLog(@"高度：%d",screen_heiht);
     chartView = [[UUChart alloc]initwithUUChartDataFrame:CGRectMake(10, 40,
                                                                     screen_heiht, 240)
                                               withSource:self
                                                withStyle:self.chartType == 1?UUChartLineStyle: UUChartBarStyle];
     [chartView showInView:self.view];
+    
 
 }
 
+/*
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+-(BOOL)shouldAutorotate{
+    return NO;
+}
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)hengShuPing:(BOOL)m_bScreen
+{
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        NSNumber *num = [[NSNumber alloc] initWithInt:(m_bScreen?UIInterfaceOrientationLandscapeRight:UIInterfaceOrientationPortrait)];
+        [[UIDevice currentDevice] performSelector:@selector(setOrientation:) withObject:(id)num];
+        [UIViewController attemptRotationToDeviceOrientation];//这行代码是关键
+    }
+    SEL selector=NSSelectorFromString(@"setOrientation:");
+         NSInvocation *invocation =[NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+         [invocation setSelector:selector];
+         [invocation setTarget:[UIDevice currentDevice]];
+         int val =m_bScreen?UIInterfaceOrientationLandscapeRight:UIInterfaceOrientationPortrait;
+         [invocation setArgument:&val atIndex:2];
+         [invocation invoke];
+       
+}
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -70,10 +101,21 @@
     self.navigationItem.rightBarButtonItem = item;
 
     NSString *date_str = [self requestDate:[NSDate date]];
-    BOOL ret = [ChartObject fetcChartDataWithType:self.requestType stcd:self.stcd WithDate:date_str];
-    if (ret) {
-        x_Labels = (NSArray *)[ChartObject requestXLables];
-        y_Values = (NSArray *)[ChartObject requestYValues];
+    BOOL ret ;
+    if (self.functionType == FunctionDoubleChart) {
+        //表示折线图上多条线
+        ret = [DoubleChartObject fetchDOubleChartDataWithType:self.requestType stcd:self.stcd WithDate:date_str];
+        if (ret) {
+            x_Labels = [NSArray arrayWithArray:[DoubleChartObject requestXLables]];
+            y_Values = [NSArray arrayWithArray:(NSArray *)[DoubleChartObject requestYValues]];
+        }
+    }else{
+        //表示折线图上单条线
+        ret = [ChartObject fetcChartDataWithType:self.requestType stcd:self.stcd WithDate:date_str];
+        if (ret) {
+            x_Labels = [NSArray arrayWithArray:[ChartObject requestXLables]];
+            y_Values = [NSArray arrayWithArray:(NSArray *)[ChartObject requestYValues]];
+        }
     }
 }
 
@@ -164,7 +206,12 @@
 - (NSArray *)UUChart_yValueArray:(UUChart *)chart
 {
     @try {
-         return @[y_Values];
+        if (self.functionType == FunctionDoubleChart) {
+            return y_Values;
+        }else{
+            //单条线
+            return @[y_Values];
+        }
     }
     @catch (NSException *exception) {
         NSLog(@"%@",exception);

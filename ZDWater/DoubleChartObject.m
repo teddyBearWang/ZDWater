@@ -1,30 +1,28 @@
-
 //
-//  ChartObject.m
+//  DoubleChartObject.m
 //  ZDWater
 //
-//  Created by teddy on 15/5/28.
+//  Created by teddy on 15/6/1.
 //  Copyright (c) 2015年 teddy. All rights reserved.
 //
 
-#import "ChartObject.h"
+#import "DoubleChartObject.h"
 #import "ASIFormDataRequest.h"
 
-//http://115.236.2.245:38027/data.ashx?t=GetStDayYL&results=8217$2015-04-27%2016:35:25
+// http://115.236.2.245:38027/data.ashx?t=GetZmChart&results=821802$2015-05-29
 
-@implementation ChartObject
+@implementation DoubleChartObject
 
 /*
  *type: 请求方式
  *stcd: 测站编号
  *date:查询时间
  */
-+ (BOOL)fetcChartDataWithType:(NSString *)type stcd:(NSString *)stcd WithDate:(NSString *)date
++ (BOOL)fetchDOubleChartDataWithType:(NSString *)type stcd:(NSString *)stcd WithDate:(NSString *)date
 {
     __block BOOL ret = NO;
     
-   // date = @"2015-04-27 16:35:25"; //雨情
-    //date = @"2015-04-14"; //水位
+  
     NSString *str = [NSString stringWithFormat:@"%@$%@",stcd,date];
     NSURL *url = [NSURL URLWithString:URL];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -38,6 +36,10 @@
             NSData *data = request.responseData;
             NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
             
+            //创建两条线的数组
+            NSMutableArray *valueAry = [NSMutableArray array];
+            NSMutableArray *maxValueAry = [NSMutableArray array];
+            
             if (x_Labels == nil) {
                 x_Labels = [NSMutableArray array];
             }else if(x_Labels.count != 0){
@@ -46,14 +48,18 @@
             
             if (y_values == nil) {
                 y_values = [NSMutableArray array];
-            }else if (y_values.count != 0){
+            }else if(y_values.count != 0){
                 [y_values removeAllObjects];
             }
             for (int i=0; i<arr.count; i++) {
                 NSDictionary *dic = [arr objectAtIndex:i];
                 [x_Labels addObject:[dic objectForKey:@"time"]];
-                [y_values addObject:[dic objectForKey:@"value"]];
+                [valueAry addObject:[dic objectForKey:@"value"]];
+                [maxValueAry addObject:[dic objectForKey:@"mvalue"]];
             }
+            
+            [y_values addObject:valueAry];
+            [y_values addObject:maxValueAry];
         }
     }];
     
@@ -81,9 +87,11 @@ static NSMutableArray *x_Labels = nil;
  */
 
 static NSMutableArray *y_values = nil;
+
 + (NSMutableArray *)requestYValues
 {
     return y_values;
 }
 
 @end
+

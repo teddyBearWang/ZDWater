@@ -146,6 +146,7 @@
     chart.stcd = dic[@"Stcd"];
     chart.requestType = @"GetStDayYL";
     chart.chartType = 2; //表示柱状图
+    chart.functionType = FunctionSingleChart;
     [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

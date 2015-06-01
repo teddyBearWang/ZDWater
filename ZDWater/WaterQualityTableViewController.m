@@ -125,15 +125,15 @@ static NSArray *_dataSource = nil;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSDictionary *dic = [_dataSource objectAtIndex:indexPath.row];
     cell.stationName.text = [[dic objectForKey:@"CZMC"] isEqual:@""] ? @"--" : [dic objectForKey:@"CZMC"];
-    cell.lastestLevel.text = [[dic objectForKey:@"JD"] isEqual:@""] ? @"--" : [dic objectForKey:@"JD"];
-    cell.warnWater.text = [[dic objectForKey:@"WD"] isEqual:@""] ? @"--" : [dic objectForKey:@"WD"];
+    cell.lastestLevel.text = [[dic objectForKey:@"SZDJ"] isEqual:@""] ? @"--" : [dic objectForKey:@"JD"];
+    cell.warnWater.text = [[dic objectForKey:@"WD1"] isEqual:@""] ? @"--" : [dic objectForKey:@"WD"];
     return cell;
 }
 
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    CustomHeaderView *view = [[CustomHeaderView alloc] initWithFirstLabel:@"区域" withSecond:@"站名" withThree:@"水质"];
+    CustomHeaderView *view = [[CustomHeaderView alloc] initWithFirstLabel:@"站名" withSecond:@"水质等级" withThree:@"温度"];
     view.backgroundColor = BG_COLOR;
     return view;
     
@@ -158,48 +158,5 @@ static NSArray *_dataSource = nil;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

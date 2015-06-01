@@ -18,4 +18,11 @@
 
 //定义一个数据下载完成的通知
 #define kLoadCompleteNotification  @"kLoadCompleteNotification"
+
+//图标的性质（FunctionDoubleChart，表示两条线；FunctionSingleChart：表示一条线）
+typedef enum {
+    FunctionDoubleChart,
+    FunctionSingleChart
+} FunctionType;
+
 #endif

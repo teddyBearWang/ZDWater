@@ -45,8 +45,8 @@
             }
         }
     }
-    if (max < 5) {
-        max = 5;
+    if (max < 6) {
+        max = 6;
     }
     if (self.showRange) {
         _yValueMin = min;

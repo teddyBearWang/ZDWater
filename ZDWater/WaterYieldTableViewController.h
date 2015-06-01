@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UUChart.h"
 
-@interface WaterYieldTableViewController : UITableViewController
+@interface WaterYieldTableViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UUChartDataSource>
 
+- (IBAction)tablebuttonSelectAction:(id)sender;
+- (IBAction)chartButtonSelectAction:(id)sender;
 @end

@@ -88,6 +88,7 @@
     chart.chartType = 1;//折线图
     chart.title_name = dic[@"SubStnm"];
     chart.stcd = dic[@"SubStcd"];
+    chart.functionType = FunctionDoubleChart;
     [self.navigationController pushViewController:chart animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
